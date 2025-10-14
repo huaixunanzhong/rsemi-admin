@@ -1,0 +1,27 @@
+.r-layout {
+  position: relative;
+
+  &-sider{
+    min-height: 100vh;
+    background: #fff;
+    box-shadow: 2px 0 8px 0 rgba(29,35,41,.05);
+    position: relative;
+    z-index: 13;
+
+    &-fix{
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      .i-layout-menu-side{
+        height: calc(100vh - $header-height);
+        overflow-y: auto;
+      }
+    }
+
+    &-dark{
+      background: $menu-dark-title;
+      box-shadow: 2px 0 6px rgba(0,21,41,.35);
+    }
+  }
+}
