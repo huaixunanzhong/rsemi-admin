@@ -2,9 +2,8 @@ import { create } from 'zustand'
 import Settings from '@/config/settings.ts'
 import { persist } from 'zustand/middleware'
 
-type SettingsLayout = typeof Settings.layout
 interface LayoutStore {
-  layout: SettingsLayout & {
+  layout: LayoutStore.SettingsLayout & {
     isMobile: boolean // 是否为手机
     isTablet: boolean // 是否为平板
     isDesktop: boolean // 是否为桌面

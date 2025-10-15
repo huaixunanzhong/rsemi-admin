@@ -1,8 +1,31 @@
-import { Layout } from 'antd'
+import { Layout, Typography } from 'antd'
 import { useMemo, useState } from 'react'
 import Setting from '@/config/settings.ts'
 import { useLayoutStore } from '@/stores'
 import clsx from 'clsx'
+import logo from '@/assets/images/logo.png'
+import logoDark from '@/assets/images/logo-dark.png'
+import logoSmall from '@/assets/images/logo-small.png'
+
+const { Link } = Typography
+
+interface LogoProps {
+  menuCollapse: boolean
+  siderTheme: 'light' | 'dark'
+}
+
+function Logo({ menuCollapse, siderTheme }: LogoProps) {
+  let logoUrl = ''
+
+  if (menuCollapse) {
+    logoUrl = logoSmall
+  } else if (siderTheme === 'light') {
+    logoUrl = logo
+  } else {
+    logoUrl = logoDark
+  }
+  return <img src={logoUrl} alt="logo" />
+}
 
 export default function Sider() {
   const layout = useLayoutStore((state) => state.layout)
@@ -25,11 +48,27 @@ export default function Sider() {
     [layout.siderTheme, layout.siderFix],
   )
 
+  const siderLogoKLS = useMemo(
+    () =>
+      clsx({
+        'r-layout-sider-logo': true,
+        'r-layout-sider-logo-dark': layout.siderTheme === 'dark',
+      }),
+    [layout.siderTheme],
+  )
+
   return (
     <Layout.Sider className={siderClasses} width={menuSideWidth}>
-      <span className="px-2 items-center justify-between color-blue">
-        Test Sider
-      </span>
+      <div>
+        <div className={siderLogoKLS}>
+          <Link>
+            <Logo
+              menuCollapse={layout.menuCollapse}
+              siderTheme={layout.siderTheme}
+            />
+          </Link>
+        </div>
+      </div>
     </Layout.Sider>
   )
 }

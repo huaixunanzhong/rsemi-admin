@@ -1,3 +1,6 @@
+$menu-header-height:$header-height;
+
+
 .r-layout {
   position: relative;
 
@@ -22,6 +25,23 @@
     &-dark{
       background: $menu-dark-title;
       box-shadow: 2px 0 6px rgba(0,21,41,.35);
+    }
+
+    &-logo{
+      height: $menu-header-height - 1;
+      line-height: $menu-header-height - 1;
+      text-align: center;
+      border-bottom: 1px solid #f8f8f9;
+      overflow: hidden;
+      &-dark{
+        border-bottom: 1px solid $menu-dark-active-bg;
+        background: $menu-dark-title;
+      }
+      img{
+        height: auto;
+        vertical-align: middle;
+        width: 80%;
+      }
     }
   }
 }

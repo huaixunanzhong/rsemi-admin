@@ -5,6 +5,11 @@ import { pluginSass } from '@rsbuild/plugin-sass'
 
 export default defineConfig({
   plugins: [pluginReact(), pluginSass()],
+  resolve: {
+    alias: {
+      '@': './src/',
+    },
+  },
   tools: {
     postcss: {
       postcssOptions: {
