@@ -14,6 +14,8 @@ const settings = {
     headerFix: true,
     // 是否在下滑时隐藏顶栏，需开启 headerFix，如果开启了 tabsFix，Tabs 也会被隐藏
     headerHide: false,
+    // 侧边菜单栏是否开启手风琴模式
+    menuAccordion: true,
   },
 }
 

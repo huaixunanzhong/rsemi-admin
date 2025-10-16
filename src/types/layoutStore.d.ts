@@ -7,5 +7,6 @@ declare namespace LayoutStore {
     siderFix: boolean
     headerFix: boolean
     headerHide: boolean
+    menuAccordion: boolean
   }
 }

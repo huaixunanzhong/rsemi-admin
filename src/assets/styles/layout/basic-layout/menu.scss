@@ -1,0 +1,5 @@
+.r-layout-menu{
+  &-side{
+    position: static; // 菜单开启后，Dropdown 会被 overflow-y:hidden 隐藏掉，加此不受影响
+  }
+}
