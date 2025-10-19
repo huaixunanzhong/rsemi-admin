@@ -1,47 +1,57 @@
-$menu-header-height:$header-height;
-
+$menu-header-height: $header-height;
 
 .r-layout {
   position: relative;
 
-  &-sider{
+  &-sider {
     min-height: 100vh;
     background: #fff;
-    box-shadow: 2px 0 8px 0 rgba(29,35,41,.05);
+    box-shadow: 2px 0 8px 0 rgba(29, 35, 41, 0.05);
     position: relative;
     z-index: 13;
 
-    &-fix{
+    &-fix {
       position: fixed;
       top: 0;
       left: 0;
 
-      .i-layout-menu-side{
+      .i-layout-menu-side {
         height: calc(100vh - $header-height);
         overflow-y: auto;
       }
     }
 
-    &-dark{
+    &-dark {
       background: $menu-dark-title;
-      box-shadow: 2px 0 6px rgba(0,21,41,.35);
+      box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
     }
 
-    &-logo{
+    &-logo {
       height: $menu-header-height - 1;
       line-height: $menu-header-height - 1;
       text-align: center;
       border-bottom: 1px solid #f8f8f9;
       overflow: hidden;
-      &-dark{
+      &-dark {
         border-bottom: 1px solid $menu-dark-active-bg;
         background: $menu-dark-title;
       }
-      img{
+      img {
         height: auto;
         vertical-align: middle;
         width: 80%;
       }
+    }
+  }
+
+  &-header{
+
+    &-fix{
+      position: fixed;
+      top: 0;
+      left:256px;
+        right: 0;
+        z-index: 12;
     }
   }
 }

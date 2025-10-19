@@ -1,3 +1,3 @@
-export default function MenuCollapse() {
-  return <div>MenuCollapse</div>
+export default function MenuCollapse({ menu }) {
+  return <div>MenuCollapse{menu}</div>
 }

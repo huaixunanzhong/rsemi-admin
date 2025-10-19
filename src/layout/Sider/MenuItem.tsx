@@ -1,11 +1,13 @@
 import { Menu, Badge } from 'antd'
 
-export default function MenuItem({ menu }) {
+const { Item } = Menu
+export default function MenuItem({ menu, key }) {
   return (
-    <>
-      <Menu.Item>
-        <Badge />
-      </Menu.Item>
-    </>
+    <div>
+      <Item key={key}>
+        nihapo
+        <Badge count={11} showZero color="#faad14" />
+      </Item>
+    </div>
   )
 }

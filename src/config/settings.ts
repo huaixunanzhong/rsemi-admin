@@ -1,4 +1,12 @@
-const settings = {
+const settings: Config.Settings = {
+  /** 基础配置 */
+  base: {
+    // 项目的 ID
+    appID: 'app',
+    // 是否使用动态菜单
+    dynamicMenu: false,
+  },
+  /** 布局配置 */
   layout: {
     // 侧边栏风格，可选值为 dark 或 light
     siderTheme: 'dark',
