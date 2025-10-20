@@ -1,7 +1,6 @@
 import { Badge, Layout, Nav, Typography } from '@douyinfe/semi-ui'
 import { IconSemiLogo } from '@douyinfe/semi-icons'
-import { useLayoutStore, useMenuStore } from '@/stores'
-import { useShallow } from 'zustand/react/shallow'
+import { useMenuStore } from '@/stores'
 import { useMemo } from 'react'
 import { filterMenu } from '@/utils/menu.ts'
 import Settings from '@/config/settings.ts'
@@ -13,6 +12,13 @@ interface SubTitleProps {
   menu: MenuStore.MenuItem
 }
 
+interface CollapsedNavProps {
+  menuCollapse: boolean
+}
+
+interface ISiderProps {
+  menuCollapse: boolean
+}
 const { Sider } = Layout
 
 function NavHeader({ menuCollapse }: NavHeaderProps) {
@@ -101,12 +107,7 @@ function NavMenu() {
   )
 }
 
-function CollapsedNav() {
-  const { menuCollapse } = useLayoutStore(
-    useShallow((state) => ({
-      menuCollapse: state.menuCollapse,
-    })),
-  )
+function CollapsedNav({ menuCollapse }: CollapsedNavProps) {
   return (
     <>
       <Nav
@@ -122,13 +123,7 @@ function CollapsedNav() {
   )
 }
 
-export default function ISider() {
-  const { menuCollapse } = useLayoutStore(
-    useShallow((state) => ({
-      menuCollapse: state.menuCollapse,
-    })),
-  )
-
+export default function ISider({ menuCollapse }: ISiderProps) {
   const menuSideWidth = useMemo(() => {
     return menuCollapse
       ? Settings.layout.menuSideCollapseWidth
@@ -148,7 +143,7 @@ export default function ISider() {
 
   return (
     <Sider style={siderStyle}>
-      <CollapsedNav />
+      <CollapsedNav menuCollapse={menuCollapse} />
     </Sider>
   )
 }
