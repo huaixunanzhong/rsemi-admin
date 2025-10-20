@@ -13,6 +13,7 @@ import DataCard from '@/components/DataCard.tsx'
 import {
   IconClear,
   IconComment,
+  IconExpand,
   IconEyeOpened,
   IconGridView,
   IconList,
@@ -21,14 +22,13 @@ import {
   IconTickCircle,
 } from '@douyinfe/semi-icons'
 
-function CarouselWrapper() {
-  const { Title, Paragraph } = Typography
+const { Title, Paragraph } = Typography
 
-  const style = {
-    width: '100%',
-    height: '400px',
-  }
+interface TableCardProps {
+  className?: string
+}
 
+function CarouselCard() {
   const titleStyle = {
     position: 'absolute',
     top: '100px',
@@ -74,8 +74,8 @@ function CarouselWrapper() {
   ]
 
   return (
-    <>
-      <Carousel style={style} theme="dark" autoPlay={false}>
+    <Card bodyStyle={{ padding: 0 }} className="rounded-2xl">
+      <Carousel className="w-full h-100" theme="dark" autoPlay={false}>
         {imgList.map((src, index) => {
           return (
             <div
@@ -99,11 +99,11 @@ function CarouselWrapper() {
           )
         })}
       </Carousel>
-    </>
+    </Card>
   )
 }
 
-function TableCard({ className }) {
+function TableCard({ className }: TableCardProps) {
   const columns = [
     {
       title: '标题',
@@ -211,6 +211,39 @@ function TableCard({ className }) {
       updateTime: '2020-01-26 11:01',
       avatarBg: 'light-blue',
     },
+    {
+      key: '4',
+      name: 'Semi Design 设计稿.fig',
+      nameIconSrc:
+        'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/figma-icon.png',
+      size: '2M',
+      owner: '姜鹏志',
+      status: 'success',
+      updateTime: '2020-02-02 05:13',
+      avatarBg: 'grey',
+    },
+    {
+      key: '5',
+      name: 'Semi Design 分享演示文稿',
+      nameIconSrc:
+        'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png',
+      size: '2M',
+      owner: '郝宣',
+      status: 'pending',
+      updateTime: '2020-01-17 05:31',
+      avatarBg: 'red',
+    },
+    {
+      key: '6',
+      name: '设计文档',
+      nameIconSrc:
+        'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png',
+      size: '34KB',
+      status: 'wait',
+      owner: 'Zoey Edwards',
+      updateTime: '2020-01-26 11:01',
+      avatarBg: 'light-blue',
+    },
   ]
 
   return (
@@ -223,38 +256,87 @@ function TableCard({ className }) {
 }
 
 export default function Hom() {
-  const dataList = [
+  const data1List = [
     {
-      title: 'Page Views',
+      title: <Title heading={4}>Page Views</Title>,
       icon: <IconEyeOpened style={{ color: 'var(--semi-color-primary)' }} />,
       value: '$25,000',
+      upDownRate: {
+        value: '18.00%',
+        status: 'up',
+      },
       desc: 'Up 15% from last month',
     },
     {
-      title: 'Visitors',
+      title: <Title heading={4}>Visitors</Title>,
       icon: <IconGridView style={{ color: 'var(--semi-color-primary)' }} />,
       value: '$25,000',
+      upDownRate: {
+        value: '18.00%',
+        status: 'down',
+      },
       desc: 'Up 15% from last month',
     },
     {
-      title: 'Click',
+      title: <Title heading={4}>Click</Title>,
       icon: (
         <IconSend rotate={270} style={{ color: 'var(--semi-color-primary)' }} />
       ),
       value: '$25,000',
+      upDownRate: {
+        value: '18.00%',
+        status: 'up',
+      },
       desc: 'Up 15% from last month',
     },
     {
-      title: 'Orders',
+      title: <Title heading={4}>Orders</Title>,
       icon: <IconList style={{ color: 'var(--semi-color-primary)' }} />,
       value: '$25,000',
+      upDownRate: {
+        value: '18.00%',
+        status: 'down',
+      },
       desc: 'Up 15% from last month',
+    },
+  ]
+
+  const data2List = [
+    {
+      title: <Title heading={4}>Page Views</Title>,
+      icon: <IconMore />,
+      value: '$25,000',
+      desc: ' Semi Design 是由抖音前端团队与 UED团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的Web 应用。',
+    },
+    {
+      title: <Title heading={4}>Visitors</Title>,
+      icon: <IconMore />,
+      value: '$25,000',
+      desc: ' Semi Design 是由抖音前端团队与 UED团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的Web 应用。',
+    },
+    {
+      title: <Title heading={4}>Click</Title>,
+      icon: <IconMore />,
+      value: '$25,000',
+      desc: ' Semi Design 是由抖音前端团队与 UED团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的Web 应用。',
+    },
+    {
+      title: <Title heading={4}>Orders</Title>,
+      icon: <IconExpand />,
+      value: '$25,000',
+      desc: ' Semi Design 是由抖音前端团队与 UED团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的Web 应用。',
     },
   ]
   return (
     <>
+      <Row className="mt-4 mb-4">
+        <Col xs={12}>
+          <Title heading={2}>Dashboard</Title>
+        </Col>
+        <Col xs={12}></Col>
+      </Row>
       <Row gutter={32} type="flex" justify="space-between">
-        {dataList.map((data, idx) => (
+        {data1List.map((data, idx) => (
           <Col key={idx} span={6}>
             <DataCard data={data} />
           </Col>
@@ -262,31 +344,28 @@ export default function Hom() {
       </Row>
       <Row gutter={32} className="mt-8">
         <Col span={16}>
-          <CarouselWrapper />
-          <TableCard className="mt-8" />
+          <CarouselCard />
+          <TableCard className="mt-8 rounded-2xl" />
         </Col>
         <Col span={8}>
           <Space vertical align="start" spacing={32}>
-            <Card bordered={false} headerLine={true} title="Semi Design">
-              Semi Design 是由抖音前端团队与 UED
-              团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的
-              Web 应用。
-            </Card>
-            <Card bordered={false} headerLine={true} title="Semi Design">
-              Semi Design 是由抖音前端团队与 UED
-              团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的
-              Web 应用。
-            </Card>
-            <Card bordered={false} headerLine={true} title="Semi Design">
-              Semi Design 是由抖音前端团队与 UED
-              团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的
-              Web 应用。
-            </Card>
-            <Card bordered={false} headerLine={true} title="Semi Design">
-              Semi Design 是由抖音前端团队与 UED
-              团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的
-              Web 应用。
-            </Card>
+            {data2List.map((data, idx) => {
+              return (
+                <Card
+                  key={idx}
+                  title={data.title}
+                  headerLine={false}
+                  headerExtraContent={data.icon}
+                  headerStyle={{ padding: '16px 24px' }}
+                  bodyStyle={{ padding: '12px 24px' }}
+                  className="rounded-2xl"
+                >
+                  Semi Design 是由抖音前端团队与 UED
+                  团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的
+                  Web 应用。
+                </Card>
+              )
+            })}
           </Space>
         </Col>
       </Row>

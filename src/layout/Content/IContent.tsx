@@ -5,7 +5,7 @@ const { Content } = Layout
 
 export default function IContent() {
   return (
-    <Content className="p-24 pt-64 bg-[rgba(var(--semi-grey-0),1)]">
+    <Content className="p-6 pt-16 bg-[rgba(var(--semi-grey-0),1)]">
       <Outlet />
     </Content>
   )

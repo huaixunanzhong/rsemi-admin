@@ -5,7 +5,7 @@ const { Footer } = Layout
 
 export default function IFooter() {
   return (
-    <Footer className="flex justify-between p-20 semi-color-text-2 bg-[rgba(var(--semi-grey-0),1)]">
+    <Footer className="flex justify-between p-5 semi-color-text-2 bg-[rgba(var(--semi-grey-0),1)]">
       <span className="flex items-center">
         <IconBytedanceLogo size="large" className="mr-2" />
         <span>Copyright © 2019 ByteDance. All Rights Reserved. </span>
