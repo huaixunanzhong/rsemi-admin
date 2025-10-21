@@ -8,12 +8,23 @@ const rootRoutes = [
     element: <Layout />,
     children: [
       {
-        index: true, // 匹配根路径 '/'
-        element: <Navigate to="/auction-vehicle-current-auctions" replace />,
+        index: true,
+        element: <Navigate to="/dashboard" replace />,
       },
       {
         path: 'dashboard',
         element: <Home />,
+        loader: async () => {
+          await new Promise((resolve) => {
+            const timeout = setTimeout(() => {
+              console.log('loader delay 1s')
+
+              resolve()
+              clearTimeout(timeout)
+            }, 100)
+          })
+          return 'hhhhh'
+        },
       },
       {
         path: '*',

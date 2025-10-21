@@ -21,6 +21,7 @@ import {
   IconSend,
   IconTickCircle,
 } from '@douyinfe/semi-icons'
+import { useEffect } from 'react'
 
 const { Title, Paragraph } = Typography
 
@@ -256,6 +257,10 @@ function TableCard({ className }: TableCardProps) {
 }
 
 export default function Hom() {
+  useEffect(() => {
+    console.log('Home page loaded')
+  }, [])
+
   const data1List = [
     {
       title: <Title heading={4}>Page Views</Title>,

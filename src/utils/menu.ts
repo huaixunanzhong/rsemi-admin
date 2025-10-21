@@ -43,7 +43,7 @@ function transferMenu(menu: MenuStore.MenuItem, headerName: string) {
 }
 
 /**
- * @description 根据当前路由，找打顶部菜单名称
+ * @description 根据当前路由，找到顶部菜单名称
  * @param {string} currentPath 当前路径
  * @param {Array} menuList 所有路径
  */
