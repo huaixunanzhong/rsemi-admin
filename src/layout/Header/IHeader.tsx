@@ -1,13 +1,15 @@
-import { Avatar, Button, Layout, Nav } from '@douyinfe/semi-ui'
+import { Avatar, Button, Dropdown, Layout, Nav } from '@douyinfe/semi-ui'
 import {
   IconBell,
   IconHelpCircle,
   IconIndentLeft,
   IconIndentRight,
+  IconLanguage,
 } from '@douyinfe/semi-icons'
 import { useMemo } from 'react'
 import clsx from 'clsx'
-import { useLayoutStore } from '@/stores'
+import { useI18nStore, useLayoutStore } from '@/stores'
+import { useShallow } from 'zustand/react/shallow'
 
 interface IHeaderProps {
   headerFix: boolean
@@ -42,6 +44,13 @@ function NavLeft({ menuCollapse }: NavLeftProps) {
 }
 
 function NavRight() {
+  const { locale, setLocale } = useI18nStore(
+    useShallow((state) => ({
+      locale: state.locale,
+      setLocale: state.setLocale,
+    })),
+  )
+
   return (
     <>
       <Button
@@ -54,8 +63,28 @@ function NavRight() {
         icon={<IconHelpCircle size="large" />}
         className="semi-color-text-2 mr-3"
       />
+      <Dropdown
+        clickToHide={true}
+        render={
+          <Dropdown.Menu>
+            <Dropdown.Item onClick={() => setLocale('en')}>
+              English
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => setLocale('zh')}>
+              简体中文
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        }
+      >
+        <Button
+          theme="borderless"
+          icon={<IconLanguage size="large" />}
+          onClick={() => setLocale(locale)}
+          className="semi-color-text-2 mr-3"
+        />
+      </Dropdown>
       <Avatar color="orange" size="small">
-        YJ
+        CGL
       </Avatar>
     </>
   )

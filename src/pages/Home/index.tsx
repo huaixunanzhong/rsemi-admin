@@ -21,7 +21,7 @@ import {
   IconSend,
   IconTickCircle,
 } from '@douyinfe/semi-icons'
-import { useEffect } from 'react'
+import { useIntl } from 'react-intl'
 
 const { Title, Paragraph } = Typography
 
@@ -257,9 +257,7 @@ function TableCard({ className }: TableCardProps) {
 }
 
 export default function Hom() {
-  useEffect(() => {
-    console.log('Home page loaded')
-  }, [])
+  const { formatMessage: $t } = useIntl()
 
   const data1List = [
     {
@@ -336,7 +334,7 @@ export default function Hom() {
     <>
       <Row className="mt-4 mb-4">
         <Col xs={12}>
-          <Title heading={2}>Dashboard</Title>
+          <Title heading={2}>{$t({ id: 'dashboard' })}</Title>
         </Col>
         <Col xs={12}></Col>
       </Row>

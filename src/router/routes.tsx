@@ -14,17 +14,6 @@ const rootRoutes = [
       {
         path: 'dashboard',
         element: <Home />,
-        loader: async () => {
-          await new Promise((resolve) => {
-            const timeout = setTimeout(() => {
-              console.log('loader delay 1s')
-
-              resolve()
-              clearTimeout(timeout)
-            }, 100)
-          })
-          return 'hhhhh'
-        },
       },
       {
         path: '*',
