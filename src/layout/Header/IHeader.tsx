@@ -1,4 +1,4 @@
-import { Avatar, Button, Dropdown, Layout, Nav } from '@douyinfe/semi-ui'
+import { Button, Dropdown, Layout, Nav } from '@douyinfe/semi-ui'
 import {
   IconBell,
   IconHelpCircle,
@@ -10,6 +10,7 @@ import { useMemo } from 'react'
 import clsx from 'clsx'
 import { useI18nStore, useLayoutStore } from '@/stores'
 import { useShallow } from 'zustand/react/shallow'
+import UserAvatar from '@/layout/Header/UserAvatar.tsx'
 
 interface IHeaderProps {
   headerFix: boolean
@@ -83,9 +84,7 @@ function NavRight() {
           className="semi-color-text-2 mr-3"
         />
       </Dropdown>
-      <Avatar color="orange" size="small">
-        CGL
-      </Avatar>
+      <UserAvatar />
     </>
   )
 }

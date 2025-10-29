@@ -1,6 +1,7 @@
 import { Navigate } from 'react-router-dom'
 import { Layout } from '@/layout'
 import Home from '@/pages/Home'
+import Profile from '@/pages/Profile'
 
 const rootRoutes = [
   {
@@ -14,6 +15,10 @@ const rootRoutes = [
       {
         path: 'dashboard',
         element: <Home />,
+      },
+      {
+        path: 'profile',
+        element: <Profile />,
       },
       {
         path: '*',
