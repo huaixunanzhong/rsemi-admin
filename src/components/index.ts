@@ -1,1 +1,1 @@
-export * from './DataCard'
+export * from "./DataCard";

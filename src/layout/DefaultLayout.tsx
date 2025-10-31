@@ -1,20 +1,20 @@
-import { Layout } from '@douyinfe/semi-ui'
-import { useInitApp } from '@/hooks'
-import ISider from '@/layout/Sider/ISider.tsx'
-import { useLayoutStore } from '@/stores'
-import { useShallow } from 'zustand/react/shallow'
-import IHeader from '@/layout/Header/IHeader.tsx'
-import IContent from '@/layout/Content/IContent.tsx'
-import IFooter from '@/layout/Footer/IFooter.tsx'
+import { Layout } from "@douyinfe/semi-ui";
+import { useInitApp } from "@/hooks";
+import ISider from "@/layout/Sider/ISider.tsx";
+import { useLayoutStore } from "@/stores";
+import { useShallow } from "zustand/react/shallow";
+import IHeader from "@/layout/Header/IHeader.tsx";
+import IContent from "@/layout/Content/IContent.tsx";
+import IFooter from "@/layout/Footer/IFooter.tsx";
 
 export default function BaseLayout() {
-  useInitApp()
+  useInitApp();
   const { menuCollapse, headerFix } = useLayoutStore(
-    useShallow((state) => ({
+    useShallow(state => ({
       headerFix: state.headerFix,
-      menuCollapse: state.menuCollapse,
-    })),
-  )
+      menuCollapse: state.menuCollapse
+    }))
+  );
 
   return (
     <Layout>
@@ -25,5 +25,5 @@ export default function BaseLayout() {
         <IFooter />
       </Layout>
     </Layout>
-  )
+  );
 }

@@ -5,8 +5,8 @@
  * @returns 如果有权限则返回true，否则返回false
  */
 function hasPermission(access: string[], auth: string[]) {
-  const set1 = new Set(access)
-  return auth.some((item) => set1.has(item))
+  const set1 = new Set(access);
+  return auth.some(item => set1.has(item));
 }
 
-export { hasPermission }
+export { hasPermission };

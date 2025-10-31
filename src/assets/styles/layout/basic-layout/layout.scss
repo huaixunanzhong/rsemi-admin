@@ -44,14 +44,13 @@ $menu-header-height: $header-height;
     }
   }
 
-  &-header{
-
-    &-fix{
+  &-header {
+    &-fix {
       position: fixed;
       top: 0;
-      left:256px;
-        right: 0;
-        z-index: 12;
+      left: 256px;
+      right: 0;
+      z-index: 12;
     }
   }
 }

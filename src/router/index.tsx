@@ -1,16 +1,16 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import rootRoutes from './routes.tsx'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import rootRoutes from "./routes.tsx";
 
 export default function Router() {
-  const router = createBrowserRouter(rootRoutes)
+  const router = createBrowserRouter(rootRoutes);
 
   return (
     <RouterProvider
       router={router}
       future={{
         v7_startTransition: true,
-        v7_relativeSplatPath: true,
+        v7_relativeSplatPath: true
       }}
     />
-  )
+  );
 }

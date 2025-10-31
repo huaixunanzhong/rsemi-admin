@@ -1,2 +1,6 @@
+dist
+public
+node_modules
+
 # Lock files
 pnpm-lock.yaml

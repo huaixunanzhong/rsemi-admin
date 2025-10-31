@@ -1,8 +1,8 @@
-import { Avatar, Card, Typography, Image, Space } from '@douyinfe/semi-ui'
-import { IconCalendar, IconColorPlatte } from '@douyinfe/semi-icons-lab'
-import { IconMapPin } from '@douyinfe/semi-icons'
+import { Avatar, Card, Typography, Image, Space } from "@douyinfe/semi-ui";
+import { IconCalendar, IconColorPlatte } from "@douyinfe/semi-icons-lab";
+import { IconMapPin } from "@douyinfe/semi-icons";
 
-const { Title, Text } = Typography
+const { Title, Text } = Typography;
 
 export default function UserAvatarCard() {
   return (
@@ -34,31 +34,19 @@ export default function UserAvatarCard() {
                 <Space spacing={24}>
                   <Space>
                     <IconColorPlatte className="text-[22px]" />
-                    <Text
-                      className="text-[0.9375rem]"
-                      type="tertiary"
-                      size="small"
-                    >
+                    <Text className="text-[0.9375rem]" type="tertiary" size="small">
                       Frontend Developer
                     </Text>
                   </Space>
                   <Space>
                     <IconMapPin className="text-[22px]" />
-                    <Text
-                      className="text-[0.9375rem]"
-                      type="tertiary"
-                      size="small"
-                    >
+                    <Text className="text-[0.9375rem]" type="tertiary" size="small">
                       CHENGDU, SICHUAN, CHINA
                     </Text>
                   </Space>
                   <Space>
                     <IconCalendar className="text-[22px]" />
-                    <Text
-                      className="text-[0.9375rem]"
-                      type="tertiary"
-                      size="small"
-                    >
+                    <Text className="text-[0.9375rem]" type="tertiary" size="small">
                       May 1998
                     </Text>
                   </Space>
@@ -69,5 +57,5 @@ export default function UserAvatarCard() {
         </div>
       </Card>
     </>
-  )
+  );
 }

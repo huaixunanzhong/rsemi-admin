@@ -1,38 +1,35 @@
-import { Badge, Layout, Nav, Typography } from '@douyinfe/semi-ui'
-import { IconSemiLogo } from '@douyinfe/semi-icons'
-import { useMenuStore } from '@/stores'
-import { useMemo } from 'react'
-import { filterMenu } from '@/utils/menu.ts'
-import Settings from '@/config/settings.ts'
+import { Badge, Layout, Nav, Typography } from "@douyinfe/semi-ui";
+import { IconSemiLogo } from "@douyinfe/semi-icons";
+import { useMenuStore } from "@/stores";
+import { useMemo } from "react";
+import { filterMenu } from "@/utils/menu.ts";
+import Settings from "@/config/settings.ts";
 
 interface NavHeaderProps {
-  menuCollapse: boolean
+  menuCollapse: boolean;
 }
 interface SubTitleProps {
-  menu: MenuStore.MenuItem
+  menu: MenuStore.MenuItem;
 }
 
 interface CollapsedNavProps {
-  menuCollapse: boolean
+  menuCollapse: boolean;
 }
 
 interface ISiderProps {
-  menuCollapse: boolean
+  menuCollapse: boolean;
 }
-const { Sider } = Layout
+const { Sider } = Layout;
 
 function NavHeader({ menuCollapse }: NavHeaderProps) {
-  const { Title } = Typography
+  const { Title } = Typography;
 
   return (
     <>
-      <Nav.Header
-        link="/"
-        className="r-layout-menu-side-header justify-between"
-      >
+      <Nav.Header link="/" className="r-layout-menu-side-header justify-between">
         <IconSemiLogo
           rotate={250}
-          style={{ fontSize: 24, color: 'var(--semi-color-primary)' }}
+          style={{ fontSize: 24, color: "var(--semi-color-primary)" }}
           color="var(--semi-color-primary)"
         />
         {!menuCollapse && (
@@ -42,7 +39,7 @@ function NavHeader({ menuCollapse }: NavHeaderProps) {
         )}
       </Nav.Header>
     </>
-  )
+  );
 }
 
 function SubTitle({ menu }: SubTitleProps) {
@@ -51,60 +48,41 @@ function SubTitle({ menu }: SubTitleProps) {
       <Typography.Text>{menu.title}</Typography.Text>
       <Badge count="NEW" theme="light" />
     </>
-  )
+  );
 }
 
 function NavMenu() {
-  const sider = useMenuStore((state) => state.sider)
+  const sider = useMenuStore(state => state.sider);
   const filterSider = useMemo(() => {
-    const access = ['Supplier Principal']
+    const access = ["Supplier Principal"];
     if (access && access.length) {
-      return filterMenu(sider, access, [])
+      return filterMenu(sider, access, []);
     } else {
-      return filterMenu(sider, [], [])
+      return filterMenu(sider, [], []);
     }
-  }, [sider])
+  }, [sider]);
 
   return (
     <>
-      {filterSider.map((item) => {
+      {filterSider.map(item => {
         const hasChildren = () => {
-          return item.children && item.children.length > 0
-        }
+          return item.children && item.children.length > 0;
+        };
         if (hasChildren()) {
           return (
-            <Nav.Sub
-              key={item.path}
-              itemKey={item.path}
-              icon={item.icon}
-              text={<SubTitle menu={item} />}
-            >
+            <Nav.Sub key={item.path} itemKey={item.path} icon={item.icon} text={<SubTitle menu={item} />}>
               {item.children &&
-                item.children.map((child) => {
-                  return (
-                    <Nav.Item
-                      key={child.path}
-                      itemKey={child.path}
-                      text={child.title}
-                    />
-                  )
+                item.children.map(child => {
+                  return <Nav.Item key={child.path} itemKey={child.path} text={child.title} />;
                 })}
             </Nav.Sub>
-          )
+          );
         } else {
-          return (
-            <Nav.Item
-              key={item.path}
-              icon={item.icon}
-              itemKey={item.path}
-              text={item.title}
-              link={item.path}
-            />
-          )
+          return <Nav.Item key={item.path} icon={item.icon} itemKey={item.path} text={item.title} link={item.path} />;
         }
       })}
     </>
-  )
+  );
 }
 
 function CollapsedNav({ menuCollapse }: CollapsedNavProps) {
@@ -113,37 +91,35 @@ function CollapsedNav({ menuCollapse }: CollapsedNavProps) {
       <Nav
         defaultIsCollapsed={false}
         isCollapsed={menuCollapse}
-        defaultSelectedKeys={['Home']}
-        style={{ width: '100%', height: '100%' }}
+        defaultSelectedKeys={["Home"]}
+        style={{ width: "100%", height: "100%" }}
       >
         <NavHeader menuCollapse={menuCollapse} />
         <NavMenu />
       </Nav>
     </>
-  )
+  );
 }
 
 export default function ISider({ menuCollapse }: ISiderProps) {
   const menuSideWidth = useMemo(() => {
-    return menuCollapse
-      ? Settings.layout.menuSideCollapseWidth
-      : Settings.layout.menuSideWidth
-  }, [menuCollapse])
+    return menuCollapse ? Settings.layout.menuSideCollapseWidth : Settings.layout.menuSideWidth;
+  }, [menuCollapse]);
 
   const siderStyle = useMemo(
     () => ({
-      backgroundColor: 'var(--semi-color-bg-1)',
+      backgroundColor: "var(--semi-color-bg-1)",
       width: `${menuSideWidth}px`,
       minWidth: `${menuSideWidth}px`,
       maxWidth: `${menuSideWidth}px`,
-      flex: `0 0 ${menuSideWidth}px`,
+      flex: `0 0 ${menuSideWidth}px`
     }),
-    [menuSideWidth],
-  )
+    [menuSideWidth]
+  );
 
   return (
     <Sider style={siderStyle}>
       <CollapsedNav menuCollapse={menuCollapse} />
     </Sider>
-  )
+  );
 }

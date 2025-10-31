@@ -1,7 +1,7 @@
-import { IconBytedanceLogo } from '@douyinfe/semi-icons'
-import { Layout } from '@douyinfe/semi-ui'
+import { IconBytedanceLogo } from "@douyinfe/semi-icons";
+import { Layout } from "@douyinfe/semi-ui";
 
-const { Footer } = Layout
+const { Footer } = Layout;
 
 export default function IFooter() {
   return (
@@ -15,5 +15,5 @@ export default function IFooter() {
         <span>反馈建议</span>
       </span>
     </Footer>
-  )
+  );
 }

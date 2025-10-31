@@ -1,31 +1,31 @@
-import { Navigate } from 'react-router-dom'
-import { Layout } from '@/layout'
-import Home from '@/pages/Home'
-import Profile from '@/pages/Profile'
+import { Navigate } from "react-router-dom";
+import { Layout } from "@/layout";
+import Home from "@/pages/Home";
+import Profile from "@/pages/Profile";
 
 const rootRoutes = [
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     children: [
       {
         index: true,
-        element: <Navigate to="/dashboard" replace />,
+        element: <Navigate to="/dashboard" replace />
       },
       {
-        path: 'dashboard',
-        element: <Home />,
+        path: "dashboard",
+        element: <Home />
       },
       {
-        path: 'profile',
-        element: <Profile />,
+        path: "profile",
+        element: <Profile />
       },
       {
-        path: '*',
-        element: <Navigate to="/exception/404" replace />,
-      },
-    ],
-  },
-]
+        path: "*",
+        element: <Navigate to="/exception/404" replace />
+      }
+    ]
+  }
+];
 
-export default rootRoutes
+export default rootRoutes;

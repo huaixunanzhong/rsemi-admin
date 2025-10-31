@@ -1,10 +1,10 @@
-import en from './locales/en.json'
-import zh from './locales/zh.json'
+import en from "./locales/en.json";
+import zh from "./locales/zh.json";
 
 const messages = {
   en,
-  zh,
-}
-console.log(messages)
+  zh
+};
+console.log(messages);
 
-export default messages
+export default messages;
