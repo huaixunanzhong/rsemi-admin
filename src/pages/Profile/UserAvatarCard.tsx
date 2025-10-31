@@ -29,7 +29,7 @@ export default function UserAvatarCard() {
             <div>
               <div className="ml-2 inline-block align-middle">
                 <Title heading={4} className="!text-[1.5rem] !lh-[1.58334]">
-                  陈国龙
+                  lion
                 </Title>
                 <Space spacing={24}>
                   <Space>

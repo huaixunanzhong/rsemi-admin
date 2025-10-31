@@ -14,10 +14,10 @@ function DropdownRender() {
       <Dropdown.Menu className="w-60">
         <Dropdown.Item>
           <Avatar color="orange" size="small">
-            CGL
+            Lion
           </Avatar>
           <div className="ml-2 inline-block align-middle">
-            <Title heading={6}>陈国龙</Title>
+            <Title heading={6}>lion</Title>
             <Text type="tertiary" size="small">
               前端开发工程师
             </Text>
@@ -57,7 +57,7 @@ export default function UserAvatar() {
         render={<DropdownRender />}
       >
         <Avatar color="orange" size="small">
-          CGL
+          Lion
         </Avatar>
       </Dropdown>
     </>
