@@ -1,13 +1,14 @@
-import { Card, Space, Tag, Typography } from '@douyinfe/semi-ui'
+import { Card, Space, Typography } from '@douyinfe/semi-ui'
 import UpDownRate from '@/components/UpDownRate.tsx'
+import { formatMoney } from '@/utils/number.ts'
 
-interface DataCardProps {
+export interface DataCardProps {
   data: {
-    title: string
+    title: React.ReactNode
     icon: React.ReactNode
-    value: string | number
+    value: number
     upDownRate: {
-      value: string
+      value: number
       status: 'up' | 'down'
     }
     desc: string
@@ -27,7 +28,9 @@ export default function DataCard({ data }: DataCardProps) {
     >
       <div>
         <Space>
-          <Title heading={3}>{data.value}</Title>
+          <Title heading={3}>
+            {formatMoney({ amount: data.value, useGrouping: true })}
+          </Title>
           <UpDownRate
             value={data.upDownRate.value}
             status={data.upDownRate.status}

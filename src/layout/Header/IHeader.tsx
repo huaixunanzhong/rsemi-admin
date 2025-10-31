@@ -5,8 +5,10 @@ import {
   IconIndentLeft,
   IconIndentRight,
   IconLanguage,
+  IconMoon,
+  IconSun,
 } from '@douyinfe/semi-icons'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import clsx from 'clsx'
 import { useI18nStore, useLayoutStore } from '@/stores'
 import { useShallow } from 'zustand/react/shallow'
@@ -22,6 +24,21 @@ interface NavLeftProps {
 }
 
 const { Header } = Layout
+
+interface IconButtonProps {
+  icon: React.ReactNode
+  onClick?: () => void
+}
+function IconButton({ icon, onClick }: IconButtonProps) {
+  return (
+    <Button
+      theme="borderless"
+      icon={icon}
+      className="semi-color-text-2 mr-3"
+      onClick={onClick}
+    />
+  )
+}
 
 function NavLeft({ menuCollapse }: NavLeftProps) {
   const setMenuCollapse = useLayoutStore((state) => state.setMenuCollapse)
@@ -52,23 +69,34 @@ function NavRight() {
     })),
   )
 
+  const [mode, setMode] = useState(true)
+
+  const switchMode = () => {
+    const body = document.body
+    if (body.hasAttribute('theme-mode')) {
+      body.removeAttribute('theme-mode')
+      setMode(false)
+    } else {
+      body.setAttribute('theme-mode', 'dark')
+      setMode(true)
+    }
+  }
   return (
     <>
-      <Button
-        theme="borderless"
-        icon={<IconBell size="large" />}
-        className="semi-color-text-2 mr-3"
-      />
-      <Button
-        theme="borderless"
-        icon={<IconHelpCircle size="large" />}
-        className="semi-color-text-2 mr-3"
+      <IconButton icon={<IconBell size="large" />} />
+      <IconButton icon={<IconHelpCircle size="large" />} />
+      <IconButton
+        icon={mode ? <IconMoon size="large" /> : <IconSun size="large" />}
+        onClick={switchMode}
       />
       <Dropdown
         clickToHide={true}
         render={
           <Dropdown.Menu>
-            <Dropdown.Item onClick={() => setLocale('en')}>
+            <Dropdown.Item
+              style={{ borderRadius: 'var(--semi-border-radius-medium)' }}
+              onClick={() => setLocale('en')}
+            >
               English
             </Dropdown.Item>
             <Dropdown.Item onClick={() => setLocale('zh')}>

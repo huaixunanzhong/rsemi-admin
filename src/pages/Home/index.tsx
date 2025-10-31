@@ -9,7 +9,7 @@ import {
   Avatar,
   Tag,
 } from '@douyinfe/semi-ui'
-import DataCard from '@/components/DataCard.tsx'
+import DataCard, { type DataCardProps } from '@/components/DataCard.tsx'
 import {
   IconClear,
   IconComment,
@@ -259,13 +259,13 @@ function TableCard({ className }: TableCardProps) {
 export default function Hom() {
   const { formatMessage: $t } = useIntl()
 
-  const data1List = [
+  const data1List: DataCardProps['data'][] = [
     {
       title: <Title heading={4}>Page Views</Title>,
       icon: <IconEyeOpened style={{ color: 'var(--semi-color-primary)' }} />,
-      value: '$25,000',
+      value: 25000,
       upDownRate: {
-        value: '18.00%',
+        value: 0.18,
         status: 'up',
       },
       desc: 'Up 15% from last month',
@@ -273,9 +273,9 @@ export default function Hom() {
     {
       title: <Title heading={4}>Visitors</Title>,
       icon: <IconGridView style={{ color: 'var(--semi-color-primary)' }} />,
-      value: '$25,000',
+      value: 25000,
       upDownRate: {
-        value: '18.00%',
+        value: 0.18,
         status: 'down',
       },
       desc: 'Up 15% from last month',
@@ -285,9 +285,9 @@ export default function Hom() {
       icon: (
         <IconSend rotate={270} style={{ color: 'var(--semi-color-primary)' }} />
       ),
-      value: '$25,000',
+      value: 25000,
       upDownRate: {
-        value: '18.00%',
+        value: 0.18,
         status: 'up',
       },
       desc: 'Up 15% from last month',
@@ -295,9 +295,9 @@ export default function Hom() {
     {
       title: <Title heading={4}>Orders</Title>,
       icon: <IconList style={{ color: 'var(--semi-color-primary)' }} />,
-      value: '$25,000',
+      value: 25000,
       upDownRate: {
-        value: '18.00%',
+        value: 0.18,
         status: 'down',
       },
       desc: 'Up 15% from last month',
@@ -308,25 +308,25 @@ export default function Hom() {
     {
       title: <Title heading={4}>Page Views</Title>,
       icon: <IconMore />,
-      value: '$25,000',
+      value: 25000,
       desc: ' Semi Design 是由抖音前端团队与 UED团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的Web 应用。',
     },
     {
       title: <Title heading={4}>Visitors</Title>,
       icon: <IconMore />,
-      value: '$25,000',
+      value: 25000,
       desc: ' Semi Design 是由抖音前端团队与 UED团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的Web 应用。',
     },
     {
       title: <Title heading={4}>Click</Title>,
       icon: <IconMore />,
-      value: '$25,000',
+      value: 25000,
       desc: ' Semi Design 是由抖音前端团队与 UED团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的Web 应用。',
     },
     {
       title: <Title heading={4}>Orders</Title>,
       icon: <IconExpand />,
-      value: '$25,000',
+      value: 25000,
       desc: ' Semi Design 是由抖音前端团队与 UED团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的Web 应用。',
     },
   ]
