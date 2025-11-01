@@ -14,7 +14,8 @@
   "config": {
     "commitizen": {
       "path": "node_modules/cz-git"
-    },
+    }
+  },
   "dependencies": {
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
