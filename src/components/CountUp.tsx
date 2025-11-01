@@ -105,7 +105,7 @@ export default function CountUp({
     });
 
     return () => unsubscribe();
-  }, [springValue, separator, maxDecimals]);
+  }, [springValue, separator, maxDecimals, options]);
 
   return <span className={className} ref={spanRef} />;
 }

@@ -53,14 +53,9 @@ function SubTitle({ menu }: SubTitleProps) {
 
 function NavMenu() {
   const sider = useMenuStore(state => state.sider);
-  const filterSider = useMemo(() => {
-    const access = ["Supplier Principal"];
-    if (access && access.length) {
-      return filterMenu(sider, access, []);
-    } else {
-      return filterMenu(sider, [], []);
-    }
-  }, [sider]);
+
+  const access = ["Supplier Principal"];
+  const filterSider = filterMenu(sider, access, []);
 
   return (
     <>

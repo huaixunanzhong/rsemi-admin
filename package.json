@@ -7,15 +7,27 @@
     "build": "rsbuild build",
     "dev": "rsbuild dev --open",
     "preview": "rsbuild preview",
-    "lint:prettier": "prettier --write \"**/*.{js,ts,mjs,cjs,json,tsx,css,less,scss,vue,html,md}\""
+    "lint:prettier": "prettier --write \"**/*.{js,ts,mjs,cjs,json,tsx,css,scss,html,md}\"",
+    "lint:eslint": "eslint",
+    "commit": "git-cz"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    },
   "dependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@douyinfe/semi-icons": "^2.87.1",
     "@douyinfe/semi-icons-lab": "^2.87.1",
     "@douyinfe/semi-ui": "^2.87.1",
     "@eslint/compat": "^1.4.0",
-    "@eslint/js": "^9.37.0",
+    "@eslint/js": "^9.38.0",
     "clsx": "^2.1.1",
+    "commitizen": "^4.3.1",
+    "cz-git": "^1.12.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "lodash-es": "^4.17.21",
     "motion": "^12.23.24",
     "react": "^18.3.1",
@@ -35,9 +47,9 @@
     "@typescript-eslint/eslint-plugin": "^8.46.1",
     "@typescript-eslint/parser": "^8.46.1",
     "@unocss/postcss": "^66.5.3",
-    "eslint": "^9.37.0",
+    "eslint": "^9.38.0",
     "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
     "sass": "^1.93.2",

@@ -4,11 +4,14 @@
 *.log*
 
 # Dist
-node_modules
+node_modules/
 dist/
 
 # Profile
 .rspack-profile-*/
+
+# TypeScript
+*.tsbuildinfo
 
 # IDE
 .vscode/*

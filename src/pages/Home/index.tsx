@@ -87,7 +87,7 @@ function TableCard({ className }: TableCardProps) {
     {
       title: "标题",
       dataIndex: "name",
-      render: (text, record, index) => {
+      render: (text, record) => {
         return (
           <div>
             <Avatar size="small" shape="square" src={record.nameIconSrc} style={{ marginRight: 12 }}></Avatar>
@@ -124,7 +124,7 @@ function TableCard({ className }: TableCardProps) {
     {
       title: "所有者",
       dataIndex: "owner",
-      render: (text, record, index) => {
+      render: (text, record) => {
         return (
           <div>
             <Avatar size="small" color={record.avatarBg} style={{ marginRight: 4 }}>
