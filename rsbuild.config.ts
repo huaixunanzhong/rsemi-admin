@@ -11,10 +11,10 @@ export default defineConfig({
     pluginSass(),
     pluginSvgr({
       svgrOptions: {
-        exportType: "default",  // ✅ 默认导出
-        ref: true,              // ✅ 支持 React.forwardRef
+        exportType: "default", // ✅ 默认导出
+        ref: true, // ✅ 支持 React.forwardRef
         jsxRuntime: "automatic",
-        icon: true,
+        icon: true
       }
     })
   ],

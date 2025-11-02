@@ -1,12 +1,12 @@
 interface BrandIconProps {
   className?: string;
-  children?: React.ReactNode;
+  icon?: React.ReactNode;
 }
-export default function BrandIcon({ className, children }: BrandIconProps) {
+export default function BrandIcon({ className, icon }: BrandIconProps) {
   return (
     <>
       <span className={`bg-white p-2 rounded-md shadow-md inline-flex justify-center items-center ${className || ""}`}>
-        {children}
+        {icon}
       </span>
     </>
   );
