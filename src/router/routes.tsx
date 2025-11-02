@@ -2,6 +2,7 @@ import { Navigate } from "react-router-dom";
 import { Layout } from "@/layout";
 import Home from "@/pages/Home";
 import Profile from "@/pages/Profile";
+import Login from "@/pages/account/login";
 
 const rootRoutes = [
   {
@@ -25,6 +26,10 @@ const rootRoutes = [
         element: <Navigate to="/exception/404" replace />
       }
     ]
+  },
+  {
+    path: "login",
+    element: <Login />
   }
 ];
 
