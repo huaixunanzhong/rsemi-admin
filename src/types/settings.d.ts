@@ -2,6 +2,7 @@ declare namespace Config {
   interface Settings {
     base: {
       appID: "app";
+      appName: string;
       dynamicMenu: boolean;
     };
     layout: {
