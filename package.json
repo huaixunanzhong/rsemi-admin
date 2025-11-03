@@ -39,6 +39,7 @@
     "react-helmet-async": "^1.3.0",
     "react-intl": "^7.1.14",
     "react-router-dom": "^6.20.1",
+    "reset-css": "^5.0.2",
     "zustand": "^4.4.0"
   },
   "devDependencies": {

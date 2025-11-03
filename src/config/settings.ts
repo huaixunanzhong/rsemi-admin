@@ -3,6 +3,7 @@ const settings: Config.Settings = {
   base: {
     // 项目的 ID
     appID: "app",
+    appName: "Rsemi Admin",
     // 是否使用动态菜单
     dynamicMenu: false
   },
