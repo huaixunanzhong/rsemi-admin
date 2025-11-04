@@ -30,7 +30,7 @@ export default function DataCard({ data }: DataCardProps) {
       <div>
         <Space>
           <Title heading={3}>{formatMoney({ amount: data.value, useGrouping: true })}</Title>
-          <UpDownRate value={data.upDownRate.value} status={data.upDownRate.status} bgColor={true} />
+          <UpDownRate value={data.upDownRate.value} status={data.upDownRate.status} bgColor />
         </Space>
       </div>
       <Text>{data.desc}</Text>

@@ -42,7 +42,7 @@ function DropdownRender() {
 export default function UserAvatar() {
   return (
     <>
-      <Dropdown trigger="click" keepDOM={true} position="bottomRight" render={<DropdownRender />}>
+      <Dropdown trigger="click" keepDOM position="bottomRight" render={<DropdownRender />}>
         <Avatar color="orange" size="small">
           Lion
         </Avatar>

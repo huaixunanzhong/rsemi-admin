@@ -73,7 +73,7 @@ function NavRight() {
       <IconButton icon={<IconHelpCircle size="large" />} />
       <IconButton icon={mode ? <IconMoon size="large" /> : <IconSun size="large" />} onClick={switchMode} />
       <Dropdown
-        clickToHide={true}
+        clickToHide
         render={
           <Dropdown.Menu>
             <Dropdown.Item style={{ borderRadius: "var(--semi-border-radius-medium)" }} onClick={() => setLocale("en")}>
