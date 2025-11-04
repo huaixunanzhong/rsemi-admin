@@ -4,7 +4,6 @@ import { useShallow } from "zustand/react/shallow";
 
 import { useMenuStore } from "@/stores";
 
-
 export function useInitApp() {
   const location = useLocation();
   const { setMenuList } = useMenuStore(

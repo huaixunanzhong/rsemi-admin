@@ -18,7 +18,6 @@ import WebStorm from "@/assets/svg/webstorm.svg?react";
 import BrandIcon from "@/components/BrandIcon.tsx";
 import UserAvatarCard from "@/pages/Profile/UserAvatarCard.tsx";
 
-
 export default function Profile() {
   return (
     <>

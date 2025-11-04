@@ -2,5 +2,7 @@ dist
 public
 node_modules
 
+*.md
+
 # Lock files
 pnpm-lock.yaml
