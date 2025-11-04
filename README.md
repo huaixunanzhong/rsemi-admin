@@ -40,7 +40,7 @@ To learn more about Rsbuild, check out the following resources:
  tree -N --dirsfirst -I "node_modules|dist|.git"
 ```
 
-### 目录结构设计
+### 项目目录结构
 
 ```markdown
 ├── src ← 代码根目录
