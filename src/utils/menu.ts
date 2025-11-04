@@ -1,6 +1,7 @@
-import { hasPermission } from "@/utils/permission.ts";
 import { cloneDeep } from "lodash-es";
+
 import Settings from "@/config/settings.ts";
+import { hasPermission } from "@/utils/permission.ts";
 
 /** 根据 menu 配置的权限，过滤菜单 */
 function filterMenu(menus: MenuStore.MenuItem[], access: string[], lastList: MenuStore.MenuItem[]) {

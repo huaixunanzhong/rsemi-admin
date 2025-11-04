@@ -1,4 +1,6 @@
 // 中国车
+import dashboard from "@/menu/dashboard.tsx";
+
 import adminChineseVehicle from "./modules/admin/chinese-vehicle.ts";
 import adminCompanyUser from "./modules/admin/company-user.ts";
 import adminCustomerViewRecord from "./modules/admin/customer-view-record.ts";
@@ -7,7 +9,6 @@ import rolesPermissions from "./modules/admin/roles-permissions.ts";
 import auctionCart from "./modules/auction/auction-cart.ts";
 // 拍卖订阅
 import auctionSubscriptions from "./modules/auction/auction-subscriptions.ts";
-
 // 拍卖任务
 import auctionTask from "./modules/auction/auction-task.ts";
 // 拍卖车辆
@@ -26,8 +27,6 @@ import subCustomerViewRecord from "./modules/auction/sub-customer-view-record.ts
 import accountSettings from "./modules/setting/account-settings.ts";
 /** 系统 */
 import profileSettings from "./modules/setting/profile-settings.ts";
-
-import dashboard from "@/menu/dashboard.tsx";
 
 export default [
   profileSettings,

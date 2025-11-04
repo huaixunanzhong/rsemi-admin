@@ -1,9 +1,8 @@
 import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
-import { pluginSvgr } from "@rsbuild/plugin-svgr";
-
-import UnoCss from "@unocss/postcss";
 import { pluginSass } from "@rsbuild/plugin-sass";
+import { pluginSvgr } from "@rsbuild/plugin-svgr";
+import UnoCss from "@unocss/postcss";
 
 export default defineConfig({
   plugins: [

@@ -1,9 +1,10 @@
-import { Badge, Layout, Nav, Typography } from "@douyinfe/semi-ui";
 import { IconSemiLogo } from "@douyinfe/semi-icons";
-import { useMenuStore } from "@/stores";
+import { Badge, Layout, Nav, Typography } from "@douyinfe/semi-ui";
 import { useMemo } from "react";
-import { filterMenu } from "@/utils/menu.ts";
+
 import Settings from "@/config/settings.ts";
+import { useMenuStore } from "@/stores";
+import { filterMenu } from "@/utils/menu.ts";
 
 interface NavHeaderProps {
   menuCollapse: boolean;

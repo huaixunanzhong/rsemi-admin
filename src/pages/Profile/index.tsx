@@ -1,5 +1,5 @@
-import UserAvatarCard from "@/pages/Profile/UserAvatarCard.tsx";
-import BrandIcon from "@/components/BrandIcon.tsx";
+import { Space } from "@douyinfe/semi-ui";
+
 import Capacitor from "@/assets/svg/capacitor.svg?react";
 import Css3 from "@/assets/svg/css3.svg?react";
 import Html5 from "@/assets/svg/html5.svg?react";
@@ -15,7 +15,9 @@ import Tailwind from "@/assets/svg/tailwind.svg?react";
 import Vite from "@/assets/svg/vite.svg?react";
 import Vue from "@/assets/svg/vue.svg?react";
 import WebStorm from "@/assets/svg/webstorm.svg?react";
-import { Space } from "@douyinfe/semi-ui";
+import BrandIcon from "@/components/BrandIcon.tsx";
+import UserAvatarCard from "@/pages/Profile/UserAvatarCard.tsx";
+
 
 export default function Profile() {
   return (

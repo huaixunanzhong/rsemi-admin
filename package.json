@@ -8,7 +8,7 @@
     "dev": "rsbuild dev --open",
     "preview": "rsbuild preview",
     "lint:prettier": "prettier --write \"**/*.{js,ts,mjs,cjs,json,tsx,css,scss,html,md}\"",
-    "lint:eslint": "eslint",
+    "lint:eslint": "eslint . --fix",
     "commit": "git-cz",
     "prepare": "husky"
   },
@@ -54,6 +54,8 @@
     "@typescript-eslint/parser": "^8.46.1",
     "@unocss/postcss": "^66.5.3",
     "eslint": "^9.38.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^16.4.0",

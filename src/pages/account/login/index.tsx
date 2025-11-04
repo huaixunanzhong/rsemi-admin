@@ -1,5 +1,6 @@
-import { Button, Dropdown, Form, Typography } from "@douyinfe/semi-ui";
 import { IconLanguage } from "@douyinfe/semi-icons";
+import { Button, Dropdown, Form, Typography } from "@douyinfe/semi-ui";
+
 import Logo from "@/assets/svg/logo.svg?react";
 import Settings from "@/config/settings.ts";
 

@@ -1,4 +1,3 @@
-import { Button, Dropdown, Layout, Nav } from "@douyinfe/semi-ui";
 import {
   IconBell,
   IconHelpCircle,
@@ -8,11 +7,13 @@ import {
   IconMoon,
   IconSun
 } from "@douyinfe/semi-icons";
-import { useMemo, useState } from "react";
+import { Button, Dropdown, Layout, Nav } from "@douyinfe/semi-ui";
 import clsx from "clsx";
-import { useI18nStore, useLayoutStore } from "@/stores";
+import { useMemo, useState } from "react";
 import { useShallow } from "zustand/react/shallow";
+
 import UserAvatar from "@/layout/Header/UserAvatar.tsx";
+import { useI18nStore, useLayoutStore } from "@/stores";
 
 interface IHeaderProps {
   headerFix: boolean;

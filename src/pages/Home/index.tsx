@@ -1,5 +1,3 @@
-import { Row, Col, Card, Typography, Carousel, Space, Table, Avatar, Tag } from "@douyinfe/semi-ui";
-import DataCard, { type DataCardProps } from "@/components/DataCard.tsx";
 import {
   IconClear,
   IconComment,
@@ -11,7 +9,10 @@ import {
   IconSend,
   IconTickCircle
 } from "@douyinfe/semi-icons";
+import { Row, Col, Card, Typography, Carousel, Space, Table, Avatar, Tag } from "@douyinfe/semi-ui";
 import { useIntl } from "react-intl";
+
+import DataCard, { type DataCardProps } from "@/components/DataCard.tsx";
 
 const { Title, Paragraph } = Typography;
 

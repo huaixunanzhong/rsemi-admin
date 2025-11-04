@@ -1,6 +1,7 @@
 import { IconSmallTriangleDown, IconSmallTriangleTop } from "@douyinfe/semi-icons";
 import { Tag } from "@douyinfe/semi-ui";
 import { useMemo } from "react";
+
 import CountUp from "@/components/CountUp.tsx";
 
 interface Props {

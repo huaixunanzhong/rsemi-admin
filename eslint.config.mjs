@@ -4,6 +4,7 @@ import eslintPluginPrettier from "eslint-plugin-prettier";
 import globals from "globals";
 import eslintConfigPrettier from "eslint-config-prettier";
 import reactHooks from "eslint-plugin-react-hooks";
+import pluginImport from "eslint-plugin-import";
 import { fixupConfigRules } from "@eslint/compat";
 import reactJsx from "eslint-plugin-react/configs/jsx-runtime.js";
 import react from "eslint-plugin-react/configs/recommended.js";
@@ -17,7 +18,8 @@ export default defineConfig(
     extends: [eslint.configs.recommended, ...tseslint.configs.recommended, eslintConfigPrettier], // 继承规则
     plugins: {
       prettier: eslintPluginPrettier,
-      "react-hooks": reactHooks
+      "react-hooks": reactHooks,
+      import: pluginImport
     },
     languageOptions: {
       ecmaVersion: "latest", // ecma语法支持版本
@@ -30,7 +32,44 @@ export default defineConfig(
     rules: {
       // 自定义
       "no-var": "error",
-      ...reactHooks.configs.recommended.rules
+      ...reactHooks.configs.recommended.rules,
+      "import/order": [
+        "error",
+        {
+          groups: [
+            "builtin", // 内置模块，如 fs/path
+            "external", // 外部依赖
+            "internal", // 项目内部模块
+            "parent",
+            "sibling",
+            "index",
+            // 如果有 type import（TS）
+            "type"
+          ],
+          // ✅ 每组之间空一行
+          "newlines-between": "always",
+          // ✅ 按字母排序（可选）
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true
+          },
+          // ✅ 支持比如 "@/xxx" 作为内部模块
+          pathGroups: [
+            {
+              pattern: "@/**",
+              group: "internal",
+              position: "after"
+            }
+          ],
+          pathGroupsExcludedImportTypes: ["builtin"]
+        }
+      ]
+    },
+    settings: {
+      // ✅ 支持 TS 和路径别名引入
+      "import/resolver": {
+        typescript: true
+      }
     },
     files: ["**/*.{ts,tsx}"]
   },

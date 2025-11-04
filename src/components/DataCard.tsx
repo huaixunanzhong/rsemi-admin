@@ -1,4 +1,5 @@
 import { Card, Space, Typography } from "@douyinfe/semi-ui";
+
 import UpDownRate from "@/components/UpDownRate.tsx";
 import { formatMoney } from "@/utils/number.ts";
 

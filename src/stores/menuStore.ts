@@ -1,7 +1,8 @@
 import { create } from "zustand";
+
 import Settings from "@/config/settings.ts";
-import { getHeaderName, getMenuSider, getNativeMenuHeader, getSiderSubmenu } from "@/utils/menu.ts";
 import menuSliders from "@/menu/sider";
+import { getHeaderName, getMenuSider, getNativeMenuHeader, getSiderSubmenu } from "@/utils/menu.ts";
 
 interface MenuState {
   menus: MenuStore.MenuItem[];

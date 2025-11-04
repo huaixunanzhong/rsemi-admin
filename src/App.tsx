@@ -1,10 +1,12 @@
 import "./App.scss";
 import { LocaleProvider } from "@douyinfe/semi-ui";
 import zh_CN from "@douyinfe/semi-ui/lib/es/locale/source/zh_CN";
-import Router from "./router";
 import { IntlProvider } from "react-intl";
+
 import messages from "@/lang";
 import { useI18nStore } from "@/stores";
+
+import Router from "./router";
 
 const App = () => {
   const locale = useI18nStore(state => state.locale);

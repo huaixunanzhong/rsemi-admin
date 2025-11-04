@@ -1,5 +1,5 @@
-import { Avatar, Button, Dropdown, Typography } from "@douyinfe/semi-ui";
 import { IconExit, IconUserStroked, IconSettingStroked } from "@douyinfe/semi-icons";
+import { Avatar, Button, Dropdown, Typography } from "@douyinfe/semi-ui";
 import { useNavigate } from "react-router-dom";
 
 const { Title, Text } = Typography;
