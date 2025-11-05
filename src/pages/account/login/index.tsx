@@ -2,13 +2,16 @@ import { IconLanguage } from "@douyinfe/semi-icons";
 import { Button, Dropdown, Form, Typography } from "@douyinfe/semi-ui";
 
 import Logo from "@/assets/svg/logo.svg?react";
+import Dashboard from "@/assets/svg/dashboard.svg?react";
 import Settings from "@/config/settings.ts";
 
 const { Text } = Typography;
 export default function Login() {
   return (
     <div className="w-full h-dvh flex box-border">
-      <div className="relative box-border w-[65vw] h-full p-[15px] overflow-hidden bg-blue"></div>
+      <div className="relative box-border w-[65vw] h-full p-[15px] overflow-hidden bg-[#f5f5f6]">
+        <Dashboard className="w-full h-full" />
+      </div>
 
       <div className="relative flex-auto h-full">
         <div className="fixed top-[23px] right-[30px] z-100 flex items-center justify-end">
