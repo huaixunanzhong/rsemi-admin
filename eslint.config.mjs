@@ -15,7 +15,11 @@ export default defineConfig(
   // 通用配置
   {
     ignores, // 忽略项
-    extends: [eslint.configs.recommended, ...tseslint.configs.recommended, eslintConfigPrettier], // 继承规则
+    extends: [
+      eslint.configs.recommended,
+      ...tseslint.configs.recommended,
+      eslintConfigPrettier
+    ], // 继承规则
     plugins: {
       prettier: eslintPluginPrettier,
       "react-hooks": reactHooks,

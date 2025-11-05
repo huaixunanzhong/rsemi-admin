@@ -5,7 +5,9 @@ interface FormatMoneyProps {
 }
 
 // 格式化金额
-export function formatMoney(options: FormatMoneyProps & Intl.NumberFormatOptions): string {
+export function formatMoney(
+  options: FormatMoneyProps & Intl.NumberFormatOptions
+): string {
   const { amount, defaultAmount, locale = "en-US", ...option } = options;
   const moneyFormatter = new Intl.NumberFormat(locale, {
     style: "currency",

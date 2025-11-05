@@ -4,7 +4,11 @@ import Settings from "@/config/settings.ts";
 import { hasPermission } from "@/utils/permission.ts";
 
 /** 根据 menu 配置的权限，过滤菜单 */
-function filterMenu(menus: MenuStore.MenuItem[], access: string[], lastList: MenuStore.MenuItem[]) {
+function filterMenu(
+  menus: MenuStore.MenuItem[],
+  access: string[],
+  lastList: MenuStore.MenuItem[]
+) {
   menus.forEach(menu => {
     const menuAccess = menu.auth;
     if (!menuAccess || hasPermission(access, menuAccess)) {
@@ -61,7 +65,10 @@ function getHeaderName(currentPath: string, menuList: MenuStore.MenuItem[]) {
 
 /** 读取本地的动态顶栏菜单 */
 function getNativeMenuHeader() {
-  return JSON.parse(localStorage.getItem(`admin-plus-${Settings.base.appID}-menu-header`) || "[]");
+  return JSON.parse(
+    localStorage.getItem(`admin-plus-${Settings.base.appID}-menu-header`) ||
+      "[]"
+  );
 }
 
 /** 根据当前顶栏菜单 name，找到对应的二级菜单 */
@@ -108,4 +115,10 @@ function getSiderSubmenu(currentPath: string, menuList: MenuStore.MenuItem[]) {
   return currentMenu ? currentMenu.openNames : [];
 }
 
-export { filterMenu, getNativeMenuHeader, getHeaderName, getMenuSider, getSiderSubmenu };
+export {
+  filterMenu,
+  getNativeMenuHeader,
+  getHeaderName,
+  getMenuSider,
+  getSiderSubmenu
+};

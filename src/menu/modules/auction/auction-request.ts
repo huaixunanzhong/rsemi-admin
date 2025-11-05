@@ -5,7 +5,12 @@ export default {
   title: "$t:menu.auctionRequest",
   header: "auction",
   icon: "md-help",
-  auth: ["Supplier Principal", "Supplier Staff", "Customer Principal", "Customer Staff"],
+  auth: [
+    "Supplier Principal",
+    "Supplier Staff",
+    "Customer Principal",
+    "Customer Staff"
+  ],
   children: [
     {
       path: `${pre}/list`,

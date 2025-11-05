@@ -1,7 +1,12 @@
 const pre = "/purchase-intents";
 
 const meta = {
-  auth: ["Supplier Principal", "Supplier Staff", "Customer Principal", "Customer Staff"]
+  auth: [
+    "Supplier Principal",
+    "Supplier Staff",
+    "Customer Principal",
+    "Customer Staff"
+  ]
 };
 
 export default {

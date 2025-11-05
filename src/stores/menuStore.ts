@@ -2,7 +2,12 @@ import { create } from "zustand";
 
 import Settings from "@/config/settings.ts";
 import menuSliders from "@/menu/sider";
-import { getHeaderName, getMenuSider, getNativeMenuHeader, getSiderSubmenu } from "@/utils/menu.ts";
+import {
+  getHeaderName,
+  getMenuSider,
+  getNativeMenuHeader,
+  getSiderSubmenu
+} from "@/utils/menu.ts";
 
 interface MenuState {
   menus: MenuStore.MenuItem[];
@@ -44,7 +49,9 @@ export const useMenuStore = create<MenuState>()((set, get) => ({
       get().setHeader(menuHeaderList);
     }
     // 设置侧边栏菜单
-    const menuSiderList = Settings.base.dynamicMenu ? getNativeMenuHeader() : [...menuSliders];
+    const menuSiderList = Settings.base.dynamicMenu
+      ? getNativeMenuHeader()
+      : [...menuSliders];
     // let path = to.matched[to.matched.length - 1].path
     let path = to.pathname;
     let headerName = getHeaderName(path, menuSiderList);

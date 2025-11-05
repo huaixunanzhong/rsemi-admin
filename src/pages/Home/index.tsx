@@ -9,7 +9,17 @@ import {
   IconSend,
   IconTickCircle
 } from "@douyinfe/semi-icons";
-import { Row, Col, Card, Typography, Carousel, Space, Table, Avatar, Tag } from "@douyinfe/semi-ui";
+import {
+  Row,
+  Col,
+  Card,
+  Typography,
+  Carousel,
+  Space,
+  Table,
+  Avatar,
+  Tag
+} from "@douyinfe/semi-ui";
 import { useIntl } from "react-intl";
 
 import DataCard, { type DataCardProps } from "@/components/DataCard.tsx";
@@ -48,9 +58,21 @@ function CarouselCard() {
   ];
 
   const textList = [
-    ["Semi 设计管理系统", "从 Semi Design，到 Any Design", "快速定制你的设计系统，并应用在设计稿和代码中"],
-    ["Semi 物料市场", "面向业务场景的定制化组件，支持线上预览和调试", "内容由 Semi Design 用户共建"],
-    ["Semi 设计/代码模板", "高效的 Design2Code 设计稿转代码", "海量 Figma 设计模板一键转为真实前端代码"]
+    [
+      "Semi 设计管理系统",
+      "从 Semi Design，到 Any Design",
+      "快速定制你的设计系统，并应用在设计稿和代码中"
+    ],
+    [
+      "Semi 物料市场",
+      "面向业务场景的定制化组件，支持线上预览和调试",
+      "内容由 Semi Design 用户共建"
+    ],
+    [
+      "Semi 设计/代码模板",
+      "高效的 Design2Code 设计稿转代码",
+      "海量 Figma 设计模板一键转为真实前端代码"
+    ]
   ];
 
   return (
@@ -91,7 +113,12 @@ function TableCard({ className }: TableCardProps) {
       render: (text, record) => {
         return (
           <div>
-            <Avatar size="small" shape="square" src={record.nameIconSrc} style={{ marginRight: 12 }}></Avatar>
+            <Avatar
+              size="small"
+              shape="square"
+              src={record.nameIconSrc}
+              style={{ marginRight: 12 }}
+            ></Avatar>
             {text}
           </div>
         );
@@ -128,7 +155,11 @@ function TableCard({ className }: TableCardProps) {
       render: (text, record) => {
         return (
           <div>
-            <Avatar size="small" color={record.avatarBg} style={{ marginRight: 4 }}>
+            <Avatar
+              size="small"
+              color={record.avatarBg}
+              style={{ marginRight: 4 }}
+            >
               {typeof text === "string" && text.slice(0, 1)}
             </Avatar>
             {text}
@@ -152,7 +183,8 @@ function TableCard({ className }: TableCardProps) {
     {
       key: "1",
       name: "Semi Design 设计稿.fig",
-      nameIconSrc: "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/figma-icon.png",
+      nameIconSrc:
+        "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/figma-icon.png",
       size: "2M",
       owner: "姜鹏志",
       status: "success",
@@ -162,7 +194,8 @@ function TableCard({ className }: TableCardProps) {
     {
       key: "2",
       name: "Semi Design 分享演示文稿",
-      nameIconSrc: "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png",
+      nameIconSrc:
+        "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png",
       size: "2M",
       owner: "郝宣",
       status: "pending",
@@ -172,7 +205,8 @@ function TableCard({ className }: TableCardProps) {
     {
       key: "3",
       name: "设计文档",
-      nameIconSrc: "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png",
+      nameIconSrc:
+        "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png",
       size: "34KB",
       status: "wait",
       owner: "Zoey Edwards",
@@ -182,7 +216,8 @@ function TableCard({ className }: TableCardProps) {
     {
       key: "4",
       name: "Semi Design 设计稿.fig",
-      nameIconSrc: "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/figma-icon.png",
+      nameIconSrc:
+        "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/figma-icon.png",
       size: "2M",
       owner: "姜鹏志",
       status: "success",
@@ -192,7 +227,8 @@ function TableCard({ className }: TableCardProps) {
     {
       key: "5",
       name: "Semi Design 分享演示文稿",
-      nameIconSrc: "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png",
+      nameIconSrc:
+        "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png",
       size: "2M",
       owner: "郝宣",
       status: "pending",
@@ -202,7 +238,8 @@ function TableCard({ className }: TableCardProps) {
     {
       key: "6",
       name: "设计文档",
-      nameIconSrc: "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png",
+      nameIconSrc:
+        "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png",
       size: "34KB",
       status: "wait",
       owner: "Zoey Edwards",
@@ -246,7 +283,9 @@ export default function Hom() {
     },
     {
       title: <Title heading={4}>Click</Title>,
-      icon: <IconSend rotate={270} style={{ color: "var(--semi-color-primary)" }} />,
+      icon: (
+        <IconSend rotate={270} style={{ color: "var(--semi-color-primary)" }} />
+      ),
       value: 25000,
       upDownRate: {
         value: 0.18,

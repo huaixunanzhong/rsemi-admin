@@ -27,7 +27,10 @@ function NavHeader({ menuCollapse }: NavHeaderProps) {
 
   return (
     <>
-      <Nav.Header link="/" className="r-layout-menu-side-header justify-between">
+      <Nav.Header
+        link="/"
+        className="r-layout-menu-side-header justify-between"
+      >
         <IconSemiLogo
           rotate={250}
           style={{ fontSize: 24, color: "var(--semi-color-primary)" }}
@@ -63,13 +66,28 @@ function NavMenu() {
       {filterSider.map(item => {
         const children = item.children || [];
         return children.length ? (
-          <Nav.Sub key={item.path} itemKey={item.path} icon={item.icon} text={<SubTitle menu={item} />}>
+          <Nav.Sub
+            key={item.path}
+            itemKey={item.path}
+            icon={item.icon}
+            text={<SubTitle menu={item} />}
+          >
             {children.map(child => (
-              <Nav.Item key={child.path} itemKey={child.path} text={child.title} />
+              <Nav.Item
+                key={child.path}
+                itemKey={child.path}
+                text={child.title}
+              />
             ))}
           </Nav.Sub>
         ) : (
-          <Nav.Item key={item.path} icon={item.icon} itemKey={item.path} text={item.title} link={item.path} />
+          <Nav.Item
+            key={item.path}
+            icon={item.icon}
+            itemKey={item.path}
+            text={item.title}
+            link={item.path}
+          />
         );
       })}
     </>
@@ -94,7 +112,9 @@ function CollapsedNav({ menuCollapse }: CollapsedNavProps) {
 
 export default function ISider({ menuCollapse }: ISiderProps) {
   const menuSideWidth = useMemo(() => {
-    return menuCollapse ? Settings.layout.menuSideCollapseWidth : Settings.layout.menuSideWidth;
+    return menuCollapse
+      ? Settings.layout.menuSideCollapseWidth
+      : Settings.layout.menuSideWidth;
   }, [menuCollapse]);
 
   const siderStyle = useMemo(

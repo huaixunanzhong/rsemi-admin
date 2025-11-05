@@ -84,7 +84,18 @@ export default function CountUp({
         clearTimeout(durationTimeoutId);
       };
     }
-  }, [isInView, startWhen, motionValue, direction, from, to, delay, onStart, onEnd, duration]);
+  }, [
+    isInView,
+    startWhen,
+    motionValue,
+    direction,
+    from,
+    to,
+    delay,
+    onStart,
+    onEnd,
+    duration
+  ]);
 
   useEffect(() => {
     const unsubscribe = springValue.on("change", latest => {
@@ -98,9 +109,13 @@ export default function CountUp({
           ...options
         };
 
-        const formattedNumber = Intl.NumberFormat("en-US", _options).format(latest);
+        const formattedNumber = Intl.NumberFormat("en-US", _options).format(
+          latest
+        );
 
-        spanRef.current.textContent = separator ? formattedNumber.replace(/,/g, separator) : formattedNumber;
+        spanRef.current.textContent = separator
+          ? formattedNumber.replace(/,/g, separator)
+          : formattedNumber;
       }
     });
 

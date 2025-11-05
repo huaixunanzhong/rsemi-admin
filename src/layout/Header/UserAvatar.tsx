@@ -1,4 +1,8 @@
-import { IconExit, IconUserStroked, IconSettingStroked } from "@douyinfe/semi-icons";
+import {
+  IconExit,
+  IconUserStroked,
+  IconSettingStroked
+} from "@douyinfe/semi-icons";
 import { Avatar, Button, Dropdown, Typography } from "@douyinfe/semi-ui";
 import { useNavigate } from "react-router-dom";
 
@@ -31,7 +35,13 @@ function DropdownRender() {
           <Text className="text-[0.9375rem]">Settings</Text>
         </Dropdown.Item>
         <Dropdown.Item className={itemCLS}>
-          <Button icon={<IconExit />} block theme="solid" type="primary" iconPosition="right">
+          <Button
+            icon={<IconExit />}
+            block
+            theme="solid"
+            type="primary"
+            iconPosition="right"
+          >
             Logout
           </Button>
         </Dropdown.Item>
@@ -42,7 +52,12 @@ function DropdownRender() {
 export default function UserAvatar() {
   return (
     <>
-      <Dropdown trigger="click" keepDOM position="bottomRight" render={<DropdownRender />}>
+      <Dropdown
+        trigger="click"
+        keepDOM
+        position="bottomRight"
+        render={<DropdownRender />}
+      >
         <Avatar color="orange" size="small">
           Lion
         </Avatar>

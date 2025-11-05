@@ -31,7 +31,14 @@ interface IconButtonProps {
   onClick?: () => void;
 }
 function IconButton({ icon, onClick }: IconButtonProps) {
-  return <Button theme="borderless" icon={icon} className="semi-color-text-2 mr-3" onClick={onClick} />;
+  return (
+    <Button
+      theme="borderless"
+      icon={icon}
+      className="semi-color-text-2 mr-3"
+      onClick={onClick}
+    />
+  );
 }
 
 function NavLeft({ menuCollapse }: NavLeftProps) {
@@ -41,9 +48,17 @@ function NavLeft({ menuCollapse }: NavLeftProps) {
     setMenuCollapse(!menuCollapse);
   };
   return !menuCollapse ? (
-    <Button type="tertiary" icon={<IconIndentLeft className="text-4 cursor-pointer" />} onClick={handleToggleMenu} />
+    <Button
+      type="tertiary"
+      icon={<IconIndentLeft className="text-4 cursor-pointer" />}
+      onClick={handleToggleMenu}
+    />
   ) : (
-    <Button type="tertiary" icon={<IconIndentRight className="text-4 cursor-pointer" />} onClick={handleToggleMenu} />
+    <Button
+      type="tertiary"
+      icon={<IconIndentRight className="text-4 cursor-pointer" />}
+      onClick={handleToggleMenu}
+    />
   );
 }
 
@@ -73,12 +88,18 @@ function NavRight() {
     <>
       <IconButton icon={<IconBell size="large" />} />
       <IconButton icon={<IconHelpCircle size="large" />} />
-      <IconButton icon={mode ? <IconMoon size="large" /> : <IconSun size="large" />} onClick={switchMode} />
+      <IconButton
+        icon={mode ? <IconMoon size="large" /> : <IconSun size="large" />}
+        onClick={switchMode}
+      />
       <Dropdown
         clickToHide
         render={
           <Dropdown.Menu>
-            <Dropdown.Item style={{ borderRadius: "var(--semi-border-radius-medium)" }} onClick={siwtchLocale("en")}>
+            <Dropdown.Item
+              style={{ borderRadius: "var(--semi-border-radius-medium)" }}
+              onClick={siwtchLocale("en")}
+            >
               English
             </Dropdown.Item>
             <Dropdown.Item onClick={siwtchLocale("zh")}>简体中文</Dropdown.Item>

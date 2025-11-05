@@ -1,6 +1,11 @@
 const pre = "/auction-subscriptions";
 
-const auth = ["Customer Principal", "Customer Staff", "Sub Customer Principal", "Sub Customer Staff"];
+const auth = [
+  "Customer Principal",
+  "Customer Staff",
+  "Sub Customer Principal",
+  "Sub Customer Staff"
+];
 
 export default {
   path: `${pre}`,

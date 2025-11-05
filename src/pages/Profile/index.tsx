@@ -23,21 +23,33 @@ export default function Profile() {
     <>
       <UserAvatarCard />
       <Space>
-        <BrandIcon className="mt-4" icon={<Capacitor width={24} height={24} />} />
+        <BrandIcon
+          className="mt-4"
+          icon={<Capacitor width={24} height={24} />}
+        />
         <BrandIcon className="mt-4" icon={<Css3 width={24} height={24} />} />
         <BrandIcon className="mt-4" icon={<Html5 width={24} height={24} />} />
         <BrandIcon className="mt-4" icon={<Ionic width={24} height={24} />} />
-        <BrandIcon className="mt-4" icon={<Javascript width={24} height={24} />} />
+        <BrandIcon
+          className="mt-4"
+          icon={<Javascript width={24} height={24} />}
+        />
         <BrandIcon className="mt-4" icon={<Nestjs width={24} height={24} />} />
         <BrandIcon className="mt-4" icon={<Nextjs width={24} height={24} />} />
         <BrandIcon className="mt-4" icon={<Npm width={24} height={24} />} />
         <BrandIcon className="mt-4" icon={<Reactjs width={24} height={24} />} />
         <BrandIcon className="mt-4" icon={<Sass width={24} height={24} />} />
         <BrandIcon className="mt-4" icon={<Swagger width={24} height={24} />} />
-        <BrandIcon className="mt-4" icon={<Tailwind width={24} height={24} />} />
+        <BrandIcon
+          className="mt-4"
+          icon={<Tailwind width={24} height={24} />}
+        />
         <BrandIcon className="mt-4" icon={<Vite width={24} height={24} />} />
         <BrandIcon className="mt-4" icon={<Vue width={24} height={24} />} />
-        <BrandIcon className="mt-4" icon={<WebStorm width={24} height={24} />} />
+        <BrandIcon
+          className="mt-4"
+          icon={<WebStorm width={24} height={24} />}
+        />
       </Space>
     </>
   );
