@@ -314,23 +314,21 @@ export default function Hom() {
         </Col>
         <Col span={8}>
           <Space vertical align="start" spacing={32}>
-            {data2List.map((data, idx) => {
-              return (
-                <Card
-                  key={idx}
-                  title={data.title}
-                  headerLine={false}
-                  headerExtraContent={data.icon}
-                  headerStyle={{ padding: "16px 24px" }}
-                  bodyStyle={{ padding: "12px 24px" }}
-                  className="rounded-2xl"
-                >
-                  Semi Design 是由抖音前端团队与 UED
-                  团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的
-                  Web 应用。
-                </Card>
-              );
-            })}
+            {data2List.map((data, idx) => (
+              <Card
+                key={idx}
+                title={data.title}
+                headerLine={false}
+                headerExtraContent={data.icon}
+                headerStyle={{ padding: "16px 24px" }}
+                bodyStyle={{ padding: "12px 24px" }}
+                className="rounded-2xl"
+              >
+                Semi Design 是由抖音前端团队与 UED
+                团队共同设计开发并维护的设计系统。设计系统包含设计语言以及一整套可复用的前端组件，帮助设计师与开发者更容易地打造高质量的、用户体验一致的、符合设计规范的
+                Web 应用。
+              </Card>
+            ))}
           </Space>
         </Col>
       </Row>

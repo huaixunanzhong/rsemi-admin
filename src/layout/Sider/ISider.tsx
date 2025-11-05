@@ -61,21 +61,16 @@ function NavMenu() {
   return (
     <>
       {filterSider.map(item => {
-        const hasChildren = () => {
-          return item.children && item.children.length > 0;
-        };
-        if (hasChildren()) {
-          return (
-            <Nav.Sub key={item.path} itemKey={item.path} icon={item.icon} text={<SubTitle menu={item} />}>
-              {item.children &&
-                item.children.map(child => {
-                  return <Nav.Item key={child.path} itemKey={child.path} text={child.title} />;
-                })}
-            </Nav.Sub>
-          );
-        } else {
-          return <Nav.Item key={item.path} icon={item.icon} itemKey={item.path} text={item.title} link={item.path} />;
-        }
+        const children = item.children || [];
+        return children.length ? (
+          <Nav.Sub key={item.path} itemKey={item.path} icon={item.icon} text={<SubTitle menu={item} />}>
+            {children.map(child => (
+              <Nav.Item key={child.path} itemKey={child.path} text={child.title} />
+            ))}
+          </Nav.Sub>
+        ) : (
+          <Nav.Item key={item.path} icon={item.icon} itemKey={item.path} text={item.title} link={item.path} />
+        );
       })}
     </>
   );

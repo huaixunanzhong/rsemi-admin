@@ -67,6 +67,8 @@ function NavRight() {
       setMode(true);
     }
   };
+
+  const siwtchLocale = (locale: "en" | "zh") => () => setLocale(locale);
   return (
     <>
       <IconButton icon={<IconBell size="large" />} />
@@ -76,10 +78,10 @@ function NavRight() {
         clickToHide
         render={
           <Dropdown.Menu>
-            <Dropdown.Item style={{ borderRadius: "var(--semi-border-radius-medium)" }} onClick={() => setLocale("en")}>
+            <Dropdown.Item style={{ borderRadius: "var(--semi-border-radius-medium)" }} onClick={siwtchLocale("en")}>
               English
             </Dropdown.Item>
-            <Dropdown.Item onClick={() => setLocale("zh")}>简体中文</Dropdown.Item>
+            <Dropdown.Item onClick={siwtchLocale("zh")}>简体中文</Dropdown.Item>
           </Dropdown.Menu>
         }
       >

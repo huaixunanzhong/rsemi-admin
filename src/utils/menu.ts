@@ -85,12 +85,10 @@ function transferSubMenu(menu: MenuStore.MenuItem, openNames: string[]) {
       return all.concat(foundChildren);
     }, []);
   } else {
-    return [menu].map(item => {
-      return {
-        path: item.path,
-        openNames
-      };
-    });
+    return [menu].map(item => ({
+      path: item.path,
+      openNames
+    }));
   }
 }
 
