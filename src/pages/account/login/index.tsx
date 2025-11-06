@@ -1,11 +1,12 @@
 import { IconLanguage } from "@douyinfe/semi-icons";
-import { Button, Dropdown, Form, Typography } from "@douyinfe/semi-ui";
+import { Dropdown, Form, Typography } from "@douyinfe/semi-ui";
 
 import Dashboard from "@/assets/svg/dashboard.svg?react";
 import Logo from "@/assets/svg/logo.svg?react";
 import Settings from "@/config/settings.ts";
 import "./index.scss";
 import { noop } from "@/utils/function.ts";
+import { PButton } from "@/components/semi-design-plus";
 
 const { Text } = Typography;
 
@@ -21,6 +22,15 @@ function Right() {
   const dropdownItemStyle = {
     borderRadius: "var(--semi-border-radius-medium)"
   };
+
+  const login = async () => {
+    await new Promise(resolve => {
+      const timer = setTimeout(() => {
+        resolve(true);
+        timer && clearTimeout(timer);
+      }, 1000);
+    });
+  };
   return (
     <div className="login-right">
       <div className="top-toolbar">
@@ -34,7 +44,7 @@ function Right() {
             </Dropdown.Menu>
           }
         >
-          <Button
+          <PButton
             theme="borderless"
             icon={<IconLanguage size="large" />}
             onClick={noop}
@@ -69,9 +79,15 @@ function Right() {
               <Text link={{ href: "/account/register" }}>忘记密码</Text>
             </div>
             <div className="login-btn-wrap">
-              <Button block theme="solid" type="primary" loading={false}>
+              <PButton
+                block
+                theme="solid"
+                type="primary"
+                onlyLoading={true}
+                onClick={login}
+              >
                 登录
-              </Button>
+              </PButton>
             </div>
             <div className="form-footer">
               <p>
