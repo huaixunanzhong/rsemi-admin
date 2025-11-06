@@ -1,6 +1,7 @@
 import { Button } from "@douyinfe/semi-ui";
-import type { ButtonProps } from "@douyinfe/semi-ui/lib/es/button";
 import { useMemo, useState } from "react";
+
+import type { ButtonProps } from "@douyinfe/semi-ui/lib/es/button";
 
 interface PButtonProps extends ButtonProps {
   onlyLoading?: boolean; // 是否在loading时只显示loading
@@ -25,7 +26,7 @@ export function PButton({
 
   const _children = useMemo(() => {
     return onlyLoading && loading ? "" : children;
-  }, [children, loading]);
+  }, [children, onlyLoading, loading]);
   return (
     <Button {...other} loading={loading} onClick={handleClick}>
       {_children}

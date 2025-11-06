@@ -8,7 +8,7 @@
     "dev": "rsbuild dev --open",
     "preview": "rsbuild preview",
     "lint:prettier": "prettier --write \"**/*.{js,ts,mjs,cjs,json,tsx,css,scss,html,md}\"",
-    "lint:eslint": "eslint . --fix",
+    "lint:eslint": "eslint --fix",
     "commit": "git-cz",
     "prepare": "husky"
   },

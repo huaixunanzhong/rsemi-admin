@@ -3,10 +3,10 @@ import { Dropdown, Form, Typography } from "@douyinfe/semi-ui";
 
 import Dashboard from "@/assets/svg/dashboard.svg?react";
 import Logo from "@/assets/svg/logo.svg?react";
+import { PButton } from "@/components/semi-design-plus";
 import Settings from "@/config/settings.ts";
 import "./index.scss";
 import { noop } from "@/utils/function.ts";
-import { PButton } from "@/components/semi-design-plus";
 
 const { Text } = Typography;
 
@@ -23,11 +23,15 @@ function Right() {
     borderRadius: "var(--semi-border-radius-medium)"
   };
 
-  const login = async () => {
-    await new Promise(resolve => {
-      const timer = setTimeout(() => {
+  const login = () => {
+    return new Promise(resolve => {
+      let timer: null | number = null;
+      timer = setTimeout(() => {
         resolve(true);
-        timer && clearTimeout(timer);
+        if (timer) {
+          clearTimeout(timer);
+          timer = null;
+        }
       }, 1000);
     });
   };
