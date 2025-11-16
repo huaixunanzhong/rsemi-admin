@@ -9,7 +9,7 @@ function filterMenu(
   access: string[],
   lastList: MenuStore.MenuItem[]
 ) {
-  menus.forEach(menu => {
+  menus.forEach((menu) => {
     const menuAccess = menu.auth;
     if (!menuAccess || hasPermission(access, menuAccess)) {
       let newMenu = {} as MenuStore.MenuItem;
@@ -50,16 +50,16 @@ function transferMenu(menu: MenuStore.MenuItem, headerName: string) {
  */
 function getHeaderName(currentPath: string, menuList: MenuStore.MenuItem[]) {
   const allMenus = [] as MenuStore.MenuItem[];
-  menuList.forEach(menu => {
+  menuList.forEach((menu) => {
     const headerName = menu.header || "";
     const menus = transferMenu(menu, headerName);
     allMenus.push({
       path: menu.path,
       header: headerName
     });
-    menus.forEach(item => allMenus.push(item));
+    menus.forEach((item) => allMenus.push(item));
   });
-  const currentMenu = allMenus.find(item => item.path === currentPath);
+  const currentMenu = allMenus.find((item) => item.path === currentPath);
   return currentMenu ? currentMenu.header : null;
 }
 
@@ -74,7 +74,7 @@ function getNativeMenuHeader() {
 /** 根据当前顶栏菜单 name，找到对应的二级菜单 */
 function getMenuSider(menuList: MenuStore.MenuItem[], headerName = "") {
   if (headerName) {
-    return menuList.filter(item => item.header === headerName);
+    return menuList.filter((item) => item.header === headerName);
   } else {
     return menuList;
   }
@@ -92,7 +92,7 @@ function transferSubMenu(menu: MenuStore.MenuItem, openNames: string[]) {
       return all.concat(foundChildren);
     }, []);
   } else {
-    return [menu].map(item => ({
+    return [menu].map((item) => ({
       path: item.path,
       openNames
     }));
@@ -102,16 +102,16 @@ function transferSubMenu(menu: MenuStore.MenuItem, openNames: string[]) {
 /** 根据当前路由，找到其所有父菜单 path，作为展开侧边栏 open-names 依据 */
 function getSiderSubmenu(currentPath: string, menuList: MenuStore.MenuItem[]) {
   const allMenus = [] as MenuStore.MenuItem[];
-  menuList.forEach(menu => {
+  menuList.forEach((menu) => {
     const menus = transferSubMenu(menu, []);
     allMenus.push({
       path: menu.path,
       openNames: []
     });
-    menus.forEach(item => allMenus.push(item));
+    menus.forEach((item) => allMenus.push(item));
   });
 
-  const currentMenu = allMenus.find(item => item.path === currentPath);
+  const currentMenu = allMenus.find((item) => item.path === currentPath);
   return currentMenu ? currentMenu.openNames : [];
 }
 

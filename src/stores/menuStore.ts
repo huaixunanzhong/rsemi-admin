@@ -35,14 +35,14 @@ export const useMenuStore = create<MenuState>()((set, get) => ({
   sider: [],
   activePath: "",
   openNames: [],
-  setMenus: menus => set({ menus }),
-  setMenuSider: menuSider => set({ menuSider }),
-  setHeader: menus => ({ header: menus }),
-  setHeaderName: name => set({ headerName: name }),
-  setSider: sider => set({ sider }),
-  setActivePath: activePath => set({ activePath }),
-  setOpenNames: openNames => set({ openNames }),
-  setMenuList: to => {
+  setMenus: (menus) => set({ menus }),
+  setMenuSider: (menuSider) => set({ menuSider }),
+  setHeader: (menus) => ({ header: menus }),
+  setHeaderName: (name) => set({ headerName: name }),
+  setSider: (sider) => set({ sider }),
+  setActivePath: (activePath) => set({ activePath }),
+  setOpenNames: (openNames) => set({ openNames }),
+  setMenuList: (to) => {
     // 只动态菜单设置顶栏菜单
     if (Settings.base.dynamicMenu) {
       const menuHeaderList = getNativeMenuHeader();

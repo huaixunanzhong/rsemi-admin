@@ -10,6 +10,7 @@ export function PButton({
   onlyLoading,
   children,
   onClick,
+  className,
   ...other
 }: PButtonProps) {
   const [loading, setLoading] = useState<boolean>(false);
@@ -19,6 +20,8 @@ export function PButton({
     setLoading(true);
     try {
       await onClick(e);
+    } catch (e) {
+      console.log("p-button click error:", e);
     } finally {
       setLoading(false);
     }
@@ -28,7 +31,12 @@ export function PButton({
     return onlyLoading && loading ? "" : children;
   }, [children, onlyLoading, loading]);
   return (
-    <Button {...other} loading={loading} onClick={handleClick}>
+    <Button
+      {...other}
+      className={className}
+      loading={loading}
+      onClick={handleClick}
+    >
       {_children}
     </Button>
   );

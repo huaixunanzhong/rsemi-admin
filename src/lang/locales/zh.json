@@ -1,3 +1,15 @@
 {
-  "dashboard": "仪表盘"
+  "dashboard": "仪表盘",
+  "http.errCanceled": "Request canceled",
+  "http.400": "Bad Request",
+  "http.401": "Unauthorized",
+  "http.403": "Forbidden",
+  "http.404": "Not Found",
+  "http.500": "Internal Server Error",
+  "http.502": "Bad Gateway",
+  "http.503": "Service Unavailable",
+  "http.504": "Gateway Timeout",
+  "http.requestFailed": "Request failed with status code {status}",
+  "http.theLoginHasExpired": "登录已过期",
+  "http.unauthorizedAccessPleaseLogInAgain": "您的登录已过期，请重新登录以继续操作。"
 }

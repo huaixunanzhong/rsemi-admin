@@ -98,7 +98,7 @@ export default function CountUp({
   ]);
 
   useEffect(() => {
-    const unsubscribe = springValue.on("change", latest => {
+    const unsubscribe = springValue.on("change", (latest) => {
       if (spanRef.current) {
         const hasDecimals = maxDecimals > 0;
 

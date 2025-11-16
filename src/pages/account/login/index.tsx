@@ -1,6 +1,8 @@
 import { IconLanguage } from "@douyinfe/semi-icons";
 import { Dropdown, Form, Typography } from "@douyinfe/semi-ui";
+import { useState } from "react";
 
+import { login, getProfile } from "@/apis/account.ts";
 import Dashboard from "@/assets/svg/dashboard.svg?react";
 import Logo from "@/assets/svg/logo.svg?react";
 import { PButton } from "@/components/semi-design-plus";
@@ -23,17 +25,25 @@ function Right() {
     borderRadius: "var(--semi-border-radius-medium)"
   };
 
-  const login = () => {
-    return new Promise(resolve => {
-      let timer: null | number = null;
-      timer = setTimeout(() => {
-        resolve(true);
-        if (timer) {
-          clearTimeout(timer);
-          timer = null;
-        }
-      }, 1000);
-    });
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "123"
+  });
+  const onChange = (values: any) => {
+    setFormData({ ...formData, ...values });
+  };
+
+  const singIn = async () => {
+    try {
+      const res = await login(formData);
+      const { data } = res.data;
+      const token = data.access_token;
+      const res2 = await getProfile(token);
+      console.log("getProfile", res2);
+      console.log("Login successful:", res);
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
   };
   return (
     <div className="login-right">
@@ -63,21 +73,21 @@ function Right() {
         <div className="form-container">
           <h3 className="form-title">欢迎回来</h3>
           <p className="form-subtitle">登录Rsemi Admin账户</p>
-          <Form onValueChange={noop}>
-            <Form.Select size="large" field="Role" label="角色">
+          <Form initValues={formData} onValueChange={onChange}>
+            <Form.Select size="large" field="role" label="角色">
               <Form.Select.Option value="admin">管理员</Form.Select.Option>
               <Form.Select.Option value="user">普通用户</Form.Select.Option>
               <Form.Select.Option value="guest">访客</Form.Select.Option>
             </Form.Select>
-            <Form.Input size="large" field="UserName" label="用户名" />
+            <Form.Input size="large" field="username" label="用户名" />
             <Form.Input
               mode="password"
               size="large"
-              field="Password"
+              field="password"
               label="密码"
             />
             <div className="forget-password ">
-              <Form.Checkbox>
+              <Form.Checkbox field="rememberMe">
                 <Text link>记住我</Text>
               </Form.Checkbox>
               <Text link={{ href: "/account/register" }}>忘记密码</Text>
@@ -88,7 +98,7 @@ function Right() {
                 theme="solid"
                 type="primary"
                 onlyLoading={true}
-                onClick={login}
+                onClick={singIn}
               >
                 登录
               </PButton>

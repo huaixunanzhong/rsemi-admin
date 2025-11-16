@@ -42,7 +42,7 @@ function IconButton({ icon, onClick }: IconButtonProps) {
 }
 
 function NavLeft({ menuCollapse }: NavLeftProps) {
-  const setMenuCollapse = useLayoutStore(state => state.setMenuCollapse);
+  const setMenuCollapse = useLayoutStore((state) => state.setMenuCollapse);
 
   const handleToggleMenu = () => {
     setMenuCollapse(!menuCollapse);
@@ -64,7 +64,7 @@ function NavLeft({ menuCollapse }: NavLeftProps) {
 
 function NavRight() {
   const { locale, setLocale } = useI18nStore(
-    useShallow(state => ({
+    useShallow((state) => ({
       locale: state.locale,
       setLocale: state.setLocale
     }))

@@ -1,3 +1,4 @@
+import { SemiRspackPlugin } from "@douyinfe/semi-rspack-plugin";
 import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
 import { pluginSass } from "@rsbuild/plugin-sass";
@@ -5,6 +6,21 @@ import { pluginSvgr } from "@rsbuild/plugin-svgr";
 import UnoCss from "@unocss/postcss";
 
 export default defineConfig({
+  tools: {
+    rspack: {
+      plugins: [
+        new SemiRspackPlugin({
+          theme: "@semi-bot/semi-theme-rsbuild",
+          include: "~@semi-bot/semi-theme-rsbuild/scss/local.scss"
+        })
+      ]
+    },
+    postcss: {
+      postcssOptions: {
+        plugins: [UnoCss()]
+      }
+    }
+  },
   plugins: [
     pluginReact(),
     pluginSass(),
@@ -20,13 +36,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": "./src/"
-    }
-  },
-  tools: {
-    postcss: {
-      postcssOptions: {
-        plugins: [UnoCss()]
-      }
     }
   }
 });

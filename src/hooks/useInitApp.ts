@@ -7,7 +7,7 @@ import { useMenuStore } from "@/stores";
 export function useInitApp() {
   const location = useLocation();
   const { setMenuList } = useMenuStore(
-    useShallow(state => ({
+    useShallow((state) => ({
       setMenuList: state.setMenuList
     }))
   );

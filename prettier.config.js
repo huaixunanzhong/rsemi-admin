@@ -25,7 +25,7 @@ export default {
   // 将 > 多行元素放在最后一行的末尾，而不是单独放在下一行（true:放末尾，false:单独一行）
   bracketSameLine: false,
   // (x)=>{}箭头函数参数只有一个时是否要有小括号（avoid：省略号，always：不省略号）
-  arrowParens: "avoid",
+  arrowParens: "always",
   // 指定要使用的解析器，不需要写文件开头的@prettier
   requirePragma: false,
   // 可以在文件顶部插入一个特殊标记，指定该文件已使用Prettier 格式化

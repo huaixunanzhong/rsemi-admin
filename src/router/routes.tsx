@@ -2,8 +2,9 @@ import { Navigate } from "react-router-dom";
 
 import { Layout } from "@/layout";
 import Login from "@/pages/account/login";
-import Home from "@/pages/Home";
-import Profile from "@/pages/Profile";
+import Feature from "@/pages/feature";
+import Home from "@/pages/home";
+import Profile from "@/pages/profile";
 
 const rootRoutes = [
   {
@@ -21,6 +22,10 @@ const rootRoutes = [
       {
         path: "profile",
         element: <Profile />
+      },
+      {
+        path: "feature",
+        element: <Feature />
       },
       {
         path: "*",

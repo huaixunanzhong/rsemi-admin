@@ -6,7 +6,7 @@
  */
 function hasPermission(access: string[], auth: string[]) {
   const set1 = new Set(access);
-  return auth.some(item => set1.has(item));
+  return auth.some((item) => set1.has(item));
 }
 
 export { hasPermission };

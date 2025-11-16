@@ -10,12 +10,12 @@ type LayoutStore = LayoutStore.SettingsLayout & {
   bodyHeight: number;
   setMenuCollapse: (menuCollapse: boolean) => void;
 };
-export const useLayoutStore = create<LayoutStore>()(set => ({
+export const useLayoutStore = create<LayoutStore>()((set) => ({
   ...Settings.layout,
   isMobile: false,
   isTablet: false,
   isDesktop: false,
   isFullscreen: false,
   bodyHeight: 0,
-  setMenuCollapse: menuCollapse => set({ menuCollapse })
+  setMenuCollapse: (menuCollapse) => set({ menuCollapse })
 }));

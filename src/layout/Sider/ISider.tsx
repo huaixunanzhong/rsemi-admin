@@ -56,14 +56,14 @@ function SubTitle({ menu }: SubTitleProps) {
 }
 
 function NavMenu() {
-  const sider = useMenuStore(state => state.sider);
+  const sider = useMenuStore((state) => state.sider);
 
   const access = ["Supplier Principal"];
   const filterSider = filterMenu(sider, access, []);
 
   return (
     <>
-      {filterSider.map(item => {
+      {filterSider.map((item) => {
         const children = item.children || [];
         return children.length ? (
           <Nav.Sub
@@ -72,7 +72,7 @@ function NavMenu() {
             icon={item.icon}
             text={<SubTitle menu={item} />}
           >
-            {children.map(child => (
+            {children.map((child) => (
               <Nav.Item
                 key={child.path}
                 itemKey={child.path}

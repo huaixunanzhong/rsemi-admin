@@ -1,0 +1,45 @@
+@import "@/assets/styles/variable";
+
+.file-card__container {
+  max-width: 300px;
+  .semi-card-body {
+    display: flex;
+    padding: $spacing-tight;
+    border-radius: var(--semi-border-radius-medium);
+    .file-card__icon {
+      width: 50px;
+      margin-right: $spacing-tight;
+      & svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .file-card__content {
+      flex: 1 1 auto;
+
+      .file-card__title {
+        margin-bottom: 4px;
+
+        h5 {
+          width: 200px;
+        }
+      }
+
+      .file-card__meta {
+        display: flex;
+
+        &-left {
+          flex: 1 1 auto;
+        }
+
+        &-right {
+          margin-left: 8px;
+          .semi-button.semi-button-with-icon-only {
+            padding: 4px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -11,7 +11,7 @@ import { useLayoutStore } from "@/stores";
 export default function BaseLayout() {
   useInitApp();
   const { menuCollapse, headerFix } = useLayoutStore(
-    useShallow(state => ({
+    useShallow((state) => ({
       headerFix: state.headerFix,
       menuCollapse: state.menuCollapse
     }))

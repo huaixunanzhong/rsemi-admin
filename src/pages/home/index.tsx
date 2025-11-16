@@ -20,9 +20,10 @@ import {
   Avatar,
   Tag
 } from "@douyinfe/semi-ui";
-import { useIntl } from "react-intl";
 
 import DataCard, { type DataCardProps } from "@/components/DataCard.tsx";
+import { $t } from "@/lang/index.ts";
+
 
 const { Title, Paragraph } = Typography;
 
@@ -131,7 +132,7 @@ function TableCard({ className }: TableCardProps) {
     {
       title: "交付状态",
       dataIndex: "status",
-      render: text => {
+      render: (text) => {
         const tagConfig = {
           success: {
             color: "green",
@@ -258,8 +259,6 @@ function TableCard({ className }: TableCardProps) {
 }
 
 export default function Hom() {
-  const { formatMessage: $t } = useIntl();
-
   const data1List: DataCardProps["data"][] = [
     {
       title: <Title heading={4}>Page Views</Title>,
@@ -335,7 +334,7 @@ export default function Hom() {
     <>
       <Row className="mt-4 mb-4">
         <Col xs={12}>
-          <Title heading={2}>{$t({ id: "dashboard" })}</Title>
+          <Title heading={2}>{$t("dashboard")}</Title>
         </Col>
         <Col xs={12}></Col>
       </Row>

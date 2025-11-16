@@ -1,3 +1,15 @@
 {
-  "dashboard": "Dashboard"
+  "dashboard": "Dashboard",
+  "http.errCanceled": "Request canceled",
+  "http.400": "Bad Request",
+  "http.401": "Unauthorized",
+  "http.403": "Forbidden",
+  "http.404": "Not Found",
+  "http.500": "Internal Server Error",
+  "http.502": "Bad Gateway",
+  "http.503": "Service Unavailable",
+  "http.504": "Gateway Timeout",
+  "http.requestFailed": "Request failed with status code {status}",
+  "http.theLoginHasExpired": "The login has expired",
+  "http.unauthorizedAccessPleaseLogInAgain": "Unauthorized access,please log in again."
 }

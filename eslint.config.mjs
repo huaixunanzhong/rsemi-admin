@@ -36,6 +36,7 @@ export default defineConfig(
     rules: {
       // 自定义
       "no-var": "error",
+      "@typescript-eslint/no-explicit-any": "off",
       ...reactHooks.configs.recommended.rules,
       "import/order": [
         "error",
@@ -70,7 +71,7 @@ export default defineConfig(
       ]
     },
     settings: {
-      // ✅ 支持 TS 和路径别名引入
+      // 支持 TS 和路径别名引入
       "import/resolver": {
         typescript: true
       }
