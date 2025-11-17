@@ -26,8 +26,8 @@ function Right() {
   };
 
   const [formData, setFormData] = useState({
-    username: "",
-    password: "123"
+    username: "Test Admin",
+    password: "admin123"
   });
   const onChange = (values: any) => {
     setFormData({ ...formData, ...values });

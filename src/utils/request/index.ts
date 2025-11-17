@@ -1,6 +1,6 @@
 import axios, {
-  type AxiosRequestConfig,
   type AxiosError,
+  type AxiosRequestConfig,
   type AxiosResponse
 } from "axios";
 
@@ -13,12 +13,14 @@ import {
   HttpError
 } from "./error-handle.ts";
 
-const { PUBLIC_API_BASE_URL, PUBLIC_REQUEST_TIMEOUT } = import.meta.env;
+/** axios配置拓展 */
+interface AxiosRequestConfigExtends extends AxiosRequestConfig {
+  usePrefix?: boolean; // 是否使用前缀，默认true
+}
 
-console.log(PUBLIC_API_BASE_URL, PUBLIC_REQUEST_TIMEOUT);
 const service = axios.create({
-  baseURL: "http://localhost:3001",
-  timeout: 6000
+  baseURL: import.meta.env.PUBLIC_API_BASE_URL,
+  timeout: import.meta.env.PUBLIC_REQUEST_TIMEOUT || 60 * 1000
 });
 
 // 请求拦截器
@@ -57,24 +59,29 @@ service.interceptors.response.use(
   }
 );
 
-async function request<T>(config: AxiosRequestConfig): Promise<T> {
+async function request<T>(config: AxiosRequestConfigExtends): Promise<T> {
+  const usePrefix = config.usePrefix ?? true;
+  if (usePrefix) {
+    const prefix = import.meta.env.PUBLIC_API_PREFIX || "";
+    config.url = `${prefix}${config.url}`;
+  }
   return service.request<T, any>({ ...config });
 }
 
 const http = {
-  get<T>(config: AxiosRequestConfig): Promise<T> {
+  get<T>(config: AxiosRequestConfigExtends): Promise<T> {
     return request<T>({ ...config, method: "GET" });
   },
-  post<T>(config: AxiosRequestConfig): Promise<T> {
+  post<T>(config: AxiosRequestConfigExtends): Promise<T> {
     return request<T>({ ...config, method: "POST" });
   },
-  put<T>(config: AxiosRequestConfig): Promise<T> {
+  put<T>(config: AxiosRequestConfigExtends): Promise<T> {
     return request<T>({ ...config, method: "PUT" });
   },
-  delete<T>(config: AxiosRequestConfig): Promise<T> {
+  delete<T>(config: AxiosRequestConfigExtends): Promise<T> {
     return request<T>({ ...config, method: "DELETE" });
   },
-  patch<T>(config: AxiosRequestConfig): Promise<T> {
+  patch<T>(config: AxiosRequestConfigExtends): Promise<T> {
     return request<T>({ ...config, method: "PATCH" });
   }
 };
