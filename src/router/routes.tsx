@@ -2,10 +2,10 @@ import { Navigate } from "react-router-dom";
 
 import { Layout } from "@/layout";
 import Login from "@/pages/account/login";
+import Register from "@/pages/account/register";
 import Feature from "@/pages/feature";
 import Home from "@/pages/home";
 import Profile from "@/pages/profile";
-import Register from "@/pages/account/register";
 
 const rootRoutes = [
   {

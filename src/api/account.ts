@@ -1,5 +1,5 @@
-import http from "@/utils/request";
 import * as T from "@/types/api/account.ts";
+import http from "@/utils/request";
 
 /** 注册 */
 export const register = (userInfo: T.UserInfo) => {

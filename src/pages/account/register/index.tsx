@@ -1,6 +1,7 @@
 import { IconLanguage } from "@douyinfe/semi-icons";
 import { Dropdown, Form, Typography, Toast } from "@douyinfe/semi-ui-19";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { register } from "@/api/account.ts";
 import Dashboard from "@/assets/svg/dashboard.svg?react";
@@ -9,7 +10,6 @@ import { PButton } from "@/components/semi-design-plus";
 import Settings from "@/config/settings.ts";
 import "./index.scss";
 import { noop } from "@/utils/function.ts";
-import { useNavigate } from "react-router-dom";
 
 const { Text } = Typography;
 
