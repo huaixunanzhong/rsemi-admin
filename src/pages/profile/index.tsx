@@ -1,4 +1,4 @@
-import { Space } from "@douyinfe/semi-ui";
+import { Space } from "@douyinfe/semi-ui-19";
 
 import Capacitor from "@/assets/svg/capacitor.svg?react";
 import Css3 from "@/assets/svg/css3.svg?react";
@@ -16,7 +16,7 @@ import Vite from "@/assets/svg/vite.svg?react";
 import Vue from "@/assets/svg/vue.svg?react";
 import WebStorm from "@/assets/svg/webstorm.svg?react";
 import BrandIcon from "@/components/BrandIcon.tsx";
-import UserAvatarCard from "@/pages/Profile/UserAvatarCard.tsx";
+import UserAvatarCard from "@/pages/profile/UserAvatarCard.tsx";
 
 export default function Profile() {
   return (

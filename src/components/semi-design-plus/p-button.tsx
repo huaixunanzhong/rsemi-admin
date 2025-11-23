@@ -1,7 +1,7 @@
-import { Button } from "@douyinfe/semi-ui";
+import { Button } from "@douyinfe/semi-ui-19";
 import { useMemo, useState } from "react";
 
-import type { ButtonProps } from "@douyinfe/semi-ui/lib/es/button";
+import type { ButtonProps } from "@douyinfe/semi-ui-19/lib/es/button";
 
 interface PButtonProps extends ButtonProps {
   onlyLoading?: boolean; // 是否在loading时只显示loading

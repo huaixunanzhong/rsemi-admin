@@ -1,6 +1,6 @@
 import { IconMapPin } from "@douyinfe/semi-icons";
 import { IconCalendar, IconColorPlatte } from "@douyinfe/semi-icons-lab";
-import { Avatar, Card, Typography, Image, Space } from "@douyinfe/semi-ui";
+import { Avatar, Card, Typography, Image, Space } from "@douyinfe/semi-ui-19";
 
 const { Title, Text } = Typography;
 

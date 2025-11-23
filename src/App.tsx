@@ -1,6 +1,6 @@
 import "./App.scss";
-import { LocaleProvider } from "@douyinfe/semi-ui";
-import zh_CN from "@douyinfe/semi-ui/lib/es/locale/source/zh_CN";
+import { LocaleProvider } from "@douyinfe/semi-ui-19";
+import zh_CN from "@douyinfe/semi-ui-19/lib/es/locale/source/zh_CN";
 import { IntlProvider } from "react-intl";
 
 import { messages } from "@/lang";

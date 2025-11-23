@@ -1,5 +1,5 @@
 import "./index.scss";
-import { Card, Icon, Progress, Space, Typography } from "@douyinfe/semi-ui";
+import { Card, Icon, Progress, Space, Typography } from "@douyinfe/semi-ui-19";
 import prettyBytes from "pretty-bytes";
 
 import Delete from "@/assets/svg/delete.svg?react";

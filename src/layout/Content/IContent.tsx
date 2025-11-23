@@ -1,4 +1,4 @@
-import { Layout } from "@douyinfe/semi-ui";
+import { Layout } from "@douyinfe/semi-ui-19";
 import { Outlet } from "react-router-dom";
 
 const { Content } = Layout;

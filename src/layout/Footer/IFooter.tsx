@@ -1,5 +1,5 @@
 import { IconBytedanceLogo } from "@douyinfe/semi-icons";
-import { Layout } from "@douyinfe/semi-ui";
+import { Layout } from "@douyinfe/semi-ui-19";
 
 const { Footer } = Layout;
 

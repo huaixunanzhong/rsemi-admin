@@ -7,7 +7,7 @@ import {
   IconMoon,
   IconSun
 } from "@douyinfe/semi-icons";
-import { Button, Dropdown, Layout, Nav } from "@douyinfe/semi-ui";
+import { Button, Dropdown, Layout, Nav } from "@douyinfe/semi-ui-19";
 import clsx from "clsx";
 import { useMemo, useState } from "react";
 import { useShallow } from "zustand/react/shallow";
@@ -106,12 +106,14 @@ function NavRight() {
           </Dropdown.Menu>
         }
       >
-        <Button
-          theme="borderless"
-          icon={<IconLanguage size="large" />}
-          onClick={() => setLocale(locale)}
-          className="semi-color-text-2 mr-3"
-        />
+        <span>
+          <Button
+            theme="borderless"
+            icon={<IconLanguage size="large" />}
+            onClick={() => setLocale(locale)}
+            className="semi-color-text-2 mr-3"
+          />
+        </span>
       </Dropdown>
       <UserAvatar />
     </>

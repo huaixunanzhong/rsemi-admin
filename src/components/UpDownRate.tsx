@@ -2,7 +2,7 @@ import {
   IconSmallTriangleDown,
   IconSmallTriangleTop
 } from "@douyinfe/semi-icons";
-import { Tag } from "@douyinfe/semi-ui";
+import { Tag } from "@douyinfe/semi-ui-19";
 import { useMemo } from "react";
 
 import CountUp from "@/components/CountUp.tsx";

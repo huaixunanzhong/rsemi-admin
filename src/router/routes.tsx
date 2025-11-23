@@ -5,6 +5,7 @@ import Login from "@/pages/account/login";
 import Feature from "@/pages/feature";
 import Home from "@/pages/home";
 import Profile from "@/pages/profile";
+import Register from "@/pages/account/register";
 
 const rootRoutes = [
   {
@@ -36,6 +37,10 @@ const rootRoutes = [
   {
     path: "login",
     element: <Login />
+  },
+  {
+    path: "register",
+    element: <Register />
   }
 ];
 

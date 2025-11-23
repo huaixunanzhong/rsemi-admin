@@ -1,5 +1,5 @@
 import { IconSemiLogo } from "@douyinfe/semi-icons";
-import { Badge, Layout, Nav, Typography } from "@douyinfe/semi-ui";
+import { Badge, Layout, Nav, Typography } from "@douyinfe/semi-ui-19";
 import { useMemo } from "react";
 
 import Settings from "@/config/settings.ts";

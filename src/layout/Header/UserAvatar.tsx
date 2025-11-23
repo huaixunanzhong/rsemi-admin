@@ -3,7 +3,7 @@ import {
   IconUserStroked,
   IconSettingStroked
 } from "@douyinfe/semi-icons";
-import { Avatar, Button, Dropdown, Typography } from "@douyinfe/semi-ui";
+import { Avatar, Button, Dropdown, Typography } from "@douyinfe/semi-ui-19";
 import { useNavigate } from "react-router-dom";
 
 const { Title, Text } = Typography;
@@ -58,9 +58,11 @@ export default function UserAvatar() {
         position="bottomRight"
         render={<DropdownRender />}
       >
-        <Avatar color="orange" size="small">
-          Lion
-        </Avatar>
+        <span>
+          <Avatar color="orange" size="small">
+            Lion
+          </Avatar>
+        </span>
       </Dropdown>
     </>
   );

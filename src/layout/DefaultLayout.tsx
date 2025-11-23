@@ -1,4 +1,4 @@
-import { Layout } from "@douyinfe/semi-ui";
+import { Layout } from "@douyinfe/semi-ui-19";
 import { useShallow } from "zustand/react/shallow";
 
 import { useInitApp } from "@/hooks";

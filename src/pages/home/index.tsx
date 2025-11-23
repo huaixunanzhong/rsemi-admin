@@ -19,11 +19,10 @@ import {
   Table,
   Avatar,
   Tag
-} from "@douyinfe/semi-ui";
+} from "@douyinfe/semi-ui-19";
 
 import DataCard, { type DataCardProps } from "@/components/DataCard.tsx";
 import { $t } from "@/lang/index.ts";
-
 
 const { Title, Paragraph } = Typography;
 

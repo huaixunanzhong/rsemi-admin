@@ -1,4 +1,4 @@
-import { Notification } from "@douyinfe/semi-ui";
+import { Notification } from "@douyinfe/semi-ui-19";
 import { debounce } from "lodash-es";
 
 import { StatusCode } from "@/constant/http.ts";
