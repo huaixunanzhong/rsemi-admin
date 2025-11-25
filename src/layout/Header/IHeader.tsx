@@ -12,8 +12,11 @@ import clsx from "clsx";
 import { useMemo, useState } from "react";
 import { useShallow } from "zustand/react/shallow";
 
-import UserAvatar from "@/layout/Header/UserAvatar.tsx";
+import IconButton from "@/components/IconButton";
 import { useI18nStore, useLayoutStore } from "@/stores";
+
+import SettingsMenu from "./SettingsMenu.tsx";
+import UserAvatar from "./UserAvatar.tsx";
 
 interface IHeaderProps {
   headerFix: boolean;
@@ -25,21 +28,6 @@ interface NavLeftProps {
 }
 
 const { Header } = Layout;
-
-interface IconButtonProps {
-  icon: React.ReactNode;
-  onClick?: () => void;
-}
-function IconButton({ icon, onClick }: IconButtonProps) {
-  return (
-    <Button
-      theme="borderless"
-      icon={icon}
-      className="semi-color-text-2 mr-3"
-      onClick={onClick}
-    />
-  );
-}
 
 function NavLeft({ menuCollapse }: NavLeftProps) {
   const setMenuCollapse = useLayoutStore((state) => state.setMenuCollapse);
@@ -84,10 +72,12 @@ function NavRight() {
   };
 
   const siwtchLocale = (locale: "en" | "zh") => () => setLocale(locale);
+
   return (
     <>
       <IconButton icon={<IconBell size="large" />} />
       <IconButton icon={<IconHelpCircle size="large" />} />
+      <SettingsMenu />
       <IconButton
         icon={mode ? <IconMoon size="large" /> : <IconSun size="large" />}
         onClick={switchMode}

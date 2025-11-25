@@ -9,6 +9,8 @@ import { fixupConfigRules } from "@eslint/compat";
 import reactJsx from "eslint-plugin-react/configs/jsx-runtime.js";
 import react from "eslint-plugin-react/configs/recommended.js";
 import { defineConfig } from "eslint/config";
+import pluginUnusedImports from "eslint-plugin-unused-imports";
+
 const ignores = ["**/node_modules/**", "dist/", ".*", "**/*.d.ts"];
 
 export default defineConfig(
@@ -23,7 +25,8 @@ export default defineConfig(
     plugins: {
       prettier: eslintPluginPrettier,
       "react-hooks": reactHooks,
-      import: pluginImport
+      import: pluginImport,
+      "unused-imports": pluginUnusedImports
     },
     languageOptions: {
       ecmaVersion: "latest", // ecma语法支持版本
@@ -38,6 +41,16 @@ export default defineConfig(
       "no-var": "error",
       "@typescript-eslint/no-explicit-any": "off",
       ...reactHooks.configs.recommended.rules,
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_"
+        }
+      ],
       "import/order": [
         "error",
         {
