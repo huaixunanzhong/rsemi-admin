@@ -1,10 +1,10 @@
 import { IconSetting } from "@douyinfe/semi-icons";
-import { Radio, RadioGroup, SideSheet, Typography } from "@douyinfe/semi-ui-19";
+import { Radio, RadioGroup, SideSheet } from "@douyinfe/semi-ui-19";
 import { useState } from "react";
 
 import IconButton from "@/components/IconButton";
-
-const { Title } = Typography;
+import RList from "@/components/r-list";
+import RListItem from "@/components/r-list-item";
 
 const COMPONENT_MAP = {
   1: <Appearance />,
@@ -16,24 +16,9 @@ const COMPONENT_MAP = {
 function Appearance() {
   return (
     <>
-      <Title heading={5}>主题</Title>
-      <RadioGroup
-        type="pureCard"
-        defaultValue={2}
-        direction="horizontal"
-        aria-label="单选组合示例"
-        name="demo-radio-group-pureCard"
-      >
-        <Radio value={1} style={{ width: 80 }}>
-          单选框标题
-        </Radio>
-        <Radio value={2} style={{ width: 80 }}>
-          单选框标题
-        </Radio>
-        <Radio value={3} style={{ width: 80 }}>
-          单选框标题
-        </Radio>
-      </RadioGroup>
+      <RList>
+        <RListItem></RListItem>
+      </RList>
     </>
   );
 }

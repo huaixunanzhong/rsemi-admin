@@ -1,0 +1,19 @@
+.r-list-item {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 0;
+  list-style: none;
+
+  &__title{
+    margin-right: 10px;
+  }
+
+  &__main{
+    flex: 1;
+    text-align: right;
+
+  }
+}
