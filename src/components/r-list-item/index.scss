@@ -3,9 +3,13 @@
   align-items: flex-start;
   flex-wrap: wrap;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 8px 0;
   margin: 0;
   list-style: none;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--semi-color-border); /* 或你想要的颜色和样式 */
+  }
 
   &__title{
     margin-right: 10px;
@@ -17,3 +21,4 @@
 
   }
 }
+
